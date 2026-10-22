@@ -1,0 +1,1090 @@
+{
+ "models": {},
+ "breakers": {},
+ "parser_sensitivity": {
+  "main": {
+   "answer_rows": 39915,
+   "answers": [
+    {
+     "file": "main/clean_repeat/deepseek__deepseek-chat-v3-0324.jsonl",
+     "conv": "Double_AMT/2010/page_34.pdf",
+     "turn": 5,
+     "key": "Double_AMT/2010/page_34.pdf|5",
+     "saved": 2.25545,
+     "corrected": 22554500000.0,
+     "gold": 22556579533.35,
+     "correct_saved": false,
+     "correct_corrected": true
+    },
+    {
+     "file": "main/inject/mistralai__mistral-large-2512.jsonl",
+     "conv": "Double_AMAT/2014/page_18.pdf",
+     "turn": 2,
+     "key": "Double_AMAT/2014/page_18.pdf|1|scale|2",
+     "saved": 8.75,
+     "corrected": 8750000000.0,
+     "gold": 0.01528,
+     "correct_saved": false,
+     "correct_corrected": false
+    }
+   ],
+   "breakers": [],
+   "later_turns_with_misparsed_history": 0,
+   "summary_changes": [
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/noise_floor/flip_rate",
+     "frozen": 0.04292527821939587,
+     "corrected": 0.04213036565977742
+    },
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/noise_floor/ci_low",
+     "frozen": 0.03282626100880705,
+     "corrected": 0.03203062487802498
+    },
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/noise_floor/ci_high",
+     "frozen": 0.05301400530807858,
+     "corrected": 0.05234035571579288
+    },
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/noise_floor/right_to_wrong",
+     "frozen": 30.0,
+     "corrected": 29.0
+    },
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/noise_floor/accuracy_repeat",
+     "frozen": 0.863275039745628,
+     "corrected": 0.8640699523052464
+    }
+   ]
+  },
+  "exploratory_guard": {
+   "answer_rows": 13450,
+   "answers": [
+    {
+     "file": "exploratory_guard/inject/deepseek__deepseek-chat-v3-0324.jsonl",
+     "conv": "Double_AMT/2010/page_34.pdf",
+     "turn": 5,
+     "key": "Double_AMT/2010/page_34.pdf|3|digits|5",
+     "saved": 2.25546,
+     "corrected": 22554600000.0,
+     "gold": 22556579533.35,
+     "correct_saved": false,
+     "correct_corrected": true
+    }
+   ],
+   "breakers": [],
+   "later_turns_with_misparsed_history": 0,
+   "summary_changes": [
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/cascade[all|independent]/extra_error",
+     "frozen": 0.1535635562086701,
+     "corrected": 0.15282880235121235
+    },
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/cascade[all|independent]/ci_low",
+     "frozen": 0.12491176027608066,
+     "corrected": 0.12369578064916871
+    },
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/cascade[all|independent]/ci_high",
+     "frozen": 0.18204209087698284,
+     "corrected": 0.1818197902592807
+    },
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/cascade[digits|independent]/extra_error",
+     "frozen": 0.01845018450184502,
+     "corrected": 0.014760147601476014
+    },
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/cascade[digits|independent]/ci_low",
+     "frozen": -0.00760528836385801,
+     "corrected": -0.018384048730193184
+    },
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/cascade[digits|independent]/ci_high",
+     "frozen": 0.04615511551155115,
+     "corrected": 0.0456140350877193
+    },
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/transmission_fit/heldout_logloss",
+     "frozen": 0.5915330321869068,
+     "corrected": 0.591760904774805
+    },
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/transmission_fit/heldout_brier",
+     "frozen": 0.2004407776159485,
+     "corrected": 0.20055218412122783
+    },
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/transmission_fit/graph_blind_heldout_brier",
+     "frozen": 0.18393798646171186,
+     "corrected": 0.18408627043839076
+    },
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/transmission_fit/brier_diff",
+     "frozen": 0.016502791154236685,
+     "corrected": 0.016465913682837074
+    },
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/transmission_fit/brier_diff_ci_low",
+     "frozen": 0.011002371243940061,
+     "corrected": 0.010932669454077398
+    },
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/transmission_fit/brier_diff_ci_high",
+     "frozen": 0.02255534075411618,
+     "corrected": 0.022554143813915344
+    },
+    {
+     "path": "/models/deepseek/deepseek-chat-v3-0324/transmission_fit/calibration_by_paths[0]/observed",
+     "frozen": 0.2678100263852243,
+     "corrected": 0.26649076517150394
+    },
+    {
+     "path": "/guard_comparison/deepseek/deepseek-chat-v3-0324/independent_extra_error/guarded",
+     "frozen": 0.1535635562086701,
+     "corrected": 0.15282880235121235
+    },
+    {
+     "path": "/guard_comparison/deepseek/deepseek-chat-v3-0324/independent_extra_error/diff",
+     "frozen": 0.00881704628949302,
+     "corrected": 0.008082292432035268
+    },
+    {
+     "path": "/guard_comparison/deepseek/deepseek-chat-v3-0324/independent_extra_error/ci_low",
+     "frozen": -0.017129335303294812,
+     "corrected": -0.01828066617234411
+    },
+    {
+     "path": "/guard_comparison/deepseek/deepseek-chat-v3-0324/independent_extra_error/ci_high",
+     "frozen": 0.03499108832165164,
+     "corrected": 0.03463973695830442
+    }
+   ]
+  },
+  "change4": {
+   "answer_rows": 5076,
+   "answers": [
+    {
+     "file": "change4/free/deepseek__deepseek-chat-v3-0324.jsonl",
+     "conv": "Double_WRK/2019/page_136.pdf",
+     "turn": 3,
+     "key": "Double_WRK/2019/page_136.pdf|3",
+     "saved": 6.4747,
+     "corrected": 6474700.0,
+     "gold": 6474791.52,
+     "correct_saved": false,
+     "correct_corrected": true
+    },
+    {
+     "file": "change4/free/deepseek__deepseek-chat-v3-0324.jsonl",
+     "conv": "Single_LMT/2016/page_117.pdf-2",
+     "turn": 2,
+     "key": "Single_LMT/2016/page_117.pdf-2|2",
+     "saved": 590.9534164,
+     "corrected": 590953416.4,
+     "gold": 497985396.86,
+     "correct_saved": false,
+     "correct_corrected": false
+    },
+    {
+     "file": "change4/free/qwen__qwen3-32b.jsonl",
+     "conv": "Double_WRK/2019/page_136.pdf",
+     "turn": 3,
+     "key": "Double_WRK/2019/page_136.pdf|3",
+     "saved": 6.4748,
+     "corrected": 6474800.0,
+     "gold": 6474791.52,
+     "correct_saved": false,
+     "correct_corrected": true
+    },
+    {
+     "file": "change4/free/qwen__qwen3-32b.jsonl",
+     "conv": "Single_JPM/2009/page_183.pdf-1",
+     "turn": 4,
+     "key": "Single_JPM/2009/page_183.pdf-1|4",
+     "saved": 2.7197,
+     "corrected": 2.7197e+16,
+     "gold": 80968000000.0,
+     "correct_saved": false,
+     "correct_corrected": false
+    }
+   ],
+   "breakers": [
+    {
+     "breaker": "program_deepseek",
+     "conv": "Double_WRK/2019/page_136.pdf",
+     "turn": 3,
+     "how": "re-scored",
+     "is_wrong": "True -> False",
+     "tripped": "True -> False"
+    },
+    {
+     "breaker": "program_deepseek",
+     "conv": "Single_LMT/2016/page_117.pdf-2",
+     "turn": 2,
+     "how": "re-scored",
+     "is_wrong": "True -> True",
+     "tripped": "True -> False"
+    },
+    {
+     "breaker": "program_qwen32b",
+     "conv": "Double_WRK/2019/page_136.pdf",
+     "turn": 3,
+     "how": "re-scored",
+     "is_wrong": "True -> False",
+     "tripped": "True -> False"
+    },
+    {
+     "breaker": "program_qwen32b",
+     "conv": "Single_JPM/2009/page_183.pdf-1",
+     "turn": 4,
+     "how": "re-scored",
+     "is_wrong": "True -> True",
+     "tripped": "False -> False"
+    },
+    {
+     "breaker": "program_v2_deepseek",
+     "conv": "Double_WRK/2019/page_136.pdf",
+     "turn": 3,
+     "how": "re-scored",
+     "is_wrong": "True -> False",
+     "tripped": "True -> False"
+    },
+    {
+     "breaker": "program_v2_deepseek",
+     "conv": "Single_LMT/2016/page_117.pdf-2",
+     "turn": 2,
+     "how": "re-scored",
+     "is_wrong": "True -> True",
+     "tripped": "True -> False"
+    },
+    {
+     "breaker": "program_v2_qwen32b",
+     "conv": "Double_WRK/2019/page_136.pdf",
+     "turn": 3,
+     "how": "re-scored",
+     "is_wrong": "True -> False",
+     "tripped": "False -> False"
+    },
+    {
+     "breaker": "program_v2_qwen32b",
+     "conv": "Single_JPM/2009/page_183.pdf-1",
+     "turn": 4,
+     "how": "re-scored",
+     "is_wrong": "True -> True",
+     "tripped": "True -> True"
+    }
+   ],
+   "later_turns_with_misparsed_history": 1,
+   "summary_changes": [
+    {
+     "path": "/breakers/program_qwen32b[free:right]/value",
+     "frozen": 0.05342741935483871,
+     "corrected": 0.05340050377833753
+    },
+    {
+     "path": "/breakers/program_qwen32b[free:right]/ci_low",
+     "frozen": 0.0427127261618265,
+     "corrected": 0.04266774338883829
+    },
+    {
+     "path": "/breakers/program_qwen32b[free:right]/ci_high",
+     "frozen": 0.06422075459629373,
+     "corrected": 0.06422064753843512
+    },
+    {
+     "path": "/breakers/program_qwen32b[free:right]/n",
+     "frozen": 1984.0,
+     "corrected": 1985.0
+    },
+    {
+     "path": "/breakers/program_qwen32b[free:right]/unusable_rate",
+     "frozen": 0.03024193548387097,
+     "corrected": 0.030226700251889168
+    },
+    {
+     "path": "/breakers/program_qwen32b[free:wrong]/value",
+     "frozen": 0.2509578544061303,
+     "corrected": 0.2495201535508637
+    },
+    {
+     "path": "/breakers/program_qwen32b[free:wrong]/ci_low",
+     "frozen": 0.21176185037121645,
+     "corrected": 0.21104195804195805
+    },
+    {
+     "path": "/breakers/program_qwen32b[free:wrong]/ci_high",
+     "frozen": 0.29121057513914655,
+     "corrected": 0.28937007874015747
+    },
+    {
+     "path": "/breakers/program_qwen32b[free:wrong]/n",
+     "frozen": 522.0,
+     "corrected": 521.0
+    },
+    {
+     "path": "/breakers/program_qwen32b[free:wrong]/unusable_rate",
+     "frozen": 0.12452107279693486,
+     "corrected": 0.12476007677543186
+    },
+    {
+     "path": "/breakers/program_v2_qwen32b[free:right]/value",
+     "frozen": 0.03276209677419355,
+     "corrected": 0.0327455919395466
+    },
+    {
+     "path": "/breakers/program_v2_qwen32b[free:right]/ci_low",
+     "frozen": 0.024934173853800538,
+     "corrected": 0.024908509392314968
+    },
+    {
+     "path": "/breakers/program_v2_qwen32b[free:right]/ci_high",
+     "frozen": 0.041237113402061855,
+     "corrected": 0.04120627609971547
+    },
+    {
+     "path": "/breakers/program_v2_qwen32b[free:right]/n",
+     "frozen": 1984.0,
+     "corrected": 1985.0
+    },
+    {
+     "path": "/breakers/program_v2_qwen32b[free:right]/unusable_rate",
+     "frozen": 0.24848790322580644,
+     "corrected": 0.24886649874055417
+    },
+    {
+     "path": "/breakers/program_v2_qwen32b[free:wrong]/value",
+     "frozen": 0.18582375478927204,
+     "corrected": 0.18618042226487524
+    },
+    {
+     "path": "/breakers/program_v2_qwen32b[free:wrong]/ci_low",
+     "frozen": 0.1509062049062049,
+     "corrected": 0.1527265955645844
+    },
+    {
+     "path": "/breakers/program_v2_qwen32b[free:wrong]/ci_high",
+     "frozen": 0.2244917544753026,
+     "corrected": 0.22223782771535572
+    },
+    {
+     "path": "/breakers/program_v2_qwen32b[free:wrong]/n",
+     "frozen": 522.0,
+     "corrected": 521.0
+    },
+    {
+     "path": "/breakers/program_v2_qwen32b[free:wrong]/unusable_rate",
+     "frozen": 0.3831417624521073,
+     "corrected": 0.381957773512476
+    },
+    {
+     "path": "/breakers/program_deepseek[free:right]/value",
+     "frozen": 0.08065314200890648,
+     "corrected": 0.08061325420375866
+    },
+    {
+     "path": "/breakers/program_deepseek[free:right]/ci_low",
+     "frozen": 0.06867130512849287,
+     "corrected": 0.06865623037119015
+    },
+    {
+     "path": "/breakers/program_deepseek[free:right]/ci_high",
+     "frozen": 0.09426067793225641,
+     "corrected": 0.09421407712719215
+    },
+    {
+     "path": "/breakers/program_deepseek[free:right]/n",
+     "frozen": 2021.0,
+     "corrected": 2022.0
+    },
+    {
+     "path": "/breakers/program_deepseek[free:right]/unusable_rate",
+     "frozen": 0.1350816427511133,
+     "corrected": 0.13501483679525222
+    },
+    {
+     "path": "/breakers/program_deepseek[free:wrong]/value",
+     "frozen": 0.30426356589147285,
+     "corrected": 0.30097087378640774
+    },
+    {
+     "path": "/breakers/program_deepseek[free:wrong]/ci_low",
+     "frozen": 0.2604964510075875,
+     "corrected": 0.2599179461504228
+    },
+    {
+     "path": "/breakers/program_deepseek[free:wrong]/ci_high",
+     "frozen": 0.3471484071484071,
+     "corrected": 0.34529291870486833
+    },
+    {
+     "path": "/breakers/program_deepseek[free:wrong]/n",
+     "frozen": 516.0,
+     "corrected": 515.0
+    },
+    {
+     "path": "/breakers/program_deepseek[free:wrong]/unusable_rate",
+     "frozen": 0.15891472868217055,
+     "corrected": 0.15922330097087378
+    },
+    {
+     "path": "/breakers/program_v2_deepseek[free:right]/value",
+     "frozen": 0.09104403760514597,
+     "corrected": 0.09099901088031652
+    },
+    {
+     "path": "/breakers/program_v2_deepseek[free:right]/ci_low",
+     "frozen": 0.07770124746381729,
+     "corrected": 0.07762370701705339
+    },
+    {
+     "path": "/breakers/program_v2_deepseek[free:right]/n",
+     "frozen": 2021.0,
+     "corrected": 2022.0
+    },
+    {
+     "path": "/breakers/program_v2_deepseek[free:right]/unusable_rate",
+     "frozen": 0.17763483424047502,
+     "corrected": 0.17754698318496537
+    },
+    {
+     "path": "/breakers/program_v2_deepseek[free:wrong]/value",
+     "frozen": 0.33527131782945735,
+     "corrected": 0.3320388349514563
+    },
+    {
+     "path": "/breakers/program_v2_deepseek[free:wrong]/ci_low",
+     "frozen": 0.2909090909090909,
+     "corrected": 0.28822710850175
+    },
+    {
+     "path": "/breakers/program_v2_deepseek[free:wrong]/ci_high",
+     "frozen": 0.3807685971556265,
+     "corrected": 0.3770911159003831
+    },
+    {
+     "path": "/breakers/program_v2_deepseek[free:wrong]/n",
+     "frozen": 516.0,
+     "corrected": 515.0
+    },
+    {
+     "path": "/breakers/program_v2_deepseek[free:wrong]/unusable_rate",
+     "frozen": 0.2441860465116279,
+     "corrected": 0.2446601941747573
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/strict/recall/diff",
+     "frozen": -0.18773946360153257,
+     "corrected": -0.18618042226487524
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/strict/recall/ci_low",
+     "frozen": -0.23314217825401543,
+     "corrected": -0.23155994841445662
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/strict/recall/ci_high",
+     "frozen": -0.13904633204633207,
+     "corrected": -0.13878048508792776
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/strict/recall/n",
+     "frozen": 522.0,
+     "corrected": 521.0
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/strict/recall/conversations",
+     "frozen": 242.0,
+     "corrected": 241.0
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/strict/recall/revised",
+     "frozen": 0.18582375478927204,
+     "corrected": 0.18618042226487524
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/strict/recall/comparator",
+     "frozen": 0.3735632183908046,
+     "corrected": 0.3723608445297505
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/strict/false_alarms/diff",
+     "frozen": -0.1587701612903226,
+     "corrected": -0.15869017632241814
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/strict/false_alarms/ci_low",
+     "frozen": -0.1741741797834894,
+     "corrected": -0.17417201563903473
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/strict/false_alarms/ci_high",
+     "frozen": -0.1416000990419595,
+     "corrected": -0.14152531219951558
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/strict/false_alarms/n",
+     "frozen": 1984.0,
+     "corrected": 1985.0
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/strict/false_alarms/revised",
+     "frozen": 0.03276209677419355,
+     "corrected": 0.0327455919395466
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/strict/false_alarms/comparator",
+     "frozen": 0.19153225806451613,
+     "corrected": 0.19143576826196473
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/lenient/recall/diff",
+     "frozen": -0.06513409961685823,
+     "corrected": -0.06333973128598848
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/lenient/recall/ci_low",
+     "frozen": -0.10469260960627981,
+     "corrected": -0.10284146998967256
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/lenient/recall/ci_high",
+     "frozen": -0.02115283109404991,
+     "corrected": -0.021315771751818275
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/lenient/recall/n",
+     "frozen": 522.0,
+     "corrected": 521.0
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/lenient/recall/conversations",
+     "frozen": 242.0,
+     "corrected": 241.0
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/lenient/recall/revised",
+     "frozen": 0.18582375478927204,
+     "corrected": 0.18618042226487524
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/lenient/recall/comparator",
+     "frozen": 0.2509578544061303,
+     "corrected": 0.2495201535508637
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/lenient/false_alarms/diff",
+     "frozen": -0.02066532258064516,
+     "corrected": -0.02065491183879093
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/lenient/false_alarms/ci_low",
+     "frozen": -0.031904287138584245,
+     "corrected": -0.03188839063278525
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/lenient/false_alarms/n",
+     "frozen": 1984.0,
+     "corrected": 1985.0
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/lenient/false_alarms/revised",
+     "frozen": 0.03276209677419355,
+     "corrected": 0.0327455919395466
+    },
+    {
+     "path": "/change4/pairs/program_v2_qwen32b/comparisons/lenient/false_alarms/comparator",
+     "frozen": 0.05342741935483871,
+     "corrected": 0.05340050377833753
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/strict/recall/diff",
+     "frozen": -0.0562015503875969,
+     "corrected": -0.05631067961165048
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/strict/recall/ci_low",
+     "frozen": -0.10466114634719287,
+     "corrected": -0.10612993821381764
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/strict/recall/ci_high",
+     "frozen": -0.007750817762244035,
+     "corrected": -0.007903588312795482
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/strict/recall/n",
+     "frozen": 516.0,
+     "corrected": 515.0
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/strict/recall/conversations",
+     "frozen": 240.0,
+     "corrected": 239.0
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/strict/recall/revised",
+     "frozen": 0.33527131782945735,
+     "corrected": 0.3320388349514563
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/strict/recall/comparator",
+     "frozen": 0.39147286821705424,
+     "corrected": 0.3883495145631068
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/strict/false_alarms/diff",
+     "frozen": -0.06580900544285008,
+     "corrected": -0.06577645895153314
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/strict/false_alarms/ci_low",
+     "frozen": -0.08444618140368018,
+     "corrected": -0.08442337419519472
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/strict/false_alarms/ci_high",
+     "frozen": -0.047973420204791235,
+     "corrected": -0.04792571979101603
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/strict/false_alarms/n",
+     "frozen": 2021.0,
+     "corrected": 2022.0
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/strict/false_alarms/revised",
+     "frozen": 0.09104403760514597,
+     "corrected": 0.09099901088031652
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/strict/false_alarms/comparator",
+     "frozen": 0.15685304304799605,
+     "corrected": 0.15677546983184965
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/lenient/recall/diff",
+     "frozen": 0.031007751937984496,
+     "corrected": 0.031067961165048542
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/lenient/recall/ci_low",
+     "frozen": -0.020080321285140562,
+     "corrected": -0.01970731667800784
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/lenient/recall/ci_high",
+     "frozen": 0.0831803184759912,
+     "corrected": 0.08251798210719445
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/lenient/recall/n",
+     "frozen": 516.0,
+     "corrected": 515.0
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/lenient/recall/conversations",
+     "frozen": 240.0,
+     "corrected": 239.0
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/lenient/recall/revised",
+     "frozen": 0.33527131782945735,
+     "corrected": 0.3320388349514563
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/lenient/recall/comparator",
+     "frozen": 0.30426356589147285,
+     "corrected": 0.30097087378640774
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/lenient/false_alarms/diff",
+     "frozen": 0.010390895596239486,
+     "corrected": 0.010385756676557863
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/lenient/false_alarms/ci_low",
+     "frozen": -0.005052445373983283,
+     "corrected": -0.005049835795846699
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/lenient/false_alarms/ci_high",
+     "frozen": 0.026075045472762577,
+     "corrected": 0.02606205529435629
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/lenient/false_alarms/n",
+     "frozen": 2021.0,
+     "corrected": 2022.0
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/lenient/false_alarms/revised",
+     "frozen": 0.09104403760514597,
+     "corrected": 0.09099901088031652
+    },
+    {
+     "path": "/change4/pairs/program_v2_deepseek/comparisons/lenient/false_alarms/comparator",
+     "frozen": 0.08065314200890648,
+     "corrected": 0.08061325420375866
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/groups/free:wrong/n",
+     "frozen": 522.0,
+     "corrected": 521.0
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/groups/free:wrong/trip",
+     "frozen": 0.18582375478927204,
+     "corrected": 0.18618042226487524
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/groups/free:wrong/trip_post",
+     "frozen": 0.19348659003831417,
+     "corrected": 0.19385796545105566
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/groups/free:wrong/unable",
+     "frozen": 0.3831417624521073,
+     "corrected": 0.381957773512476
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/groups/free:wrong/unable_post",
+     "frozen": 0.35823754789272033,
+     "corrected": 0.3570057581573896
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/groups/free:right/n",
+     "frozen": 1984.0,
+     "corrected": 1985.0
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/groups/free:right/trip",
+     "frozen": 0.03276209677419355,
+     "corrected": 0.0327455919395466
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/groups/free:right/trip_post",
+     "frozen": 0.03477822580645161,
+     "corrected": 0.034760705289672546
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/groups/free:right/unable",
+     "frozen": 0.24848790322580644,
+     "corrected": 0.24886649874055417
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/groups/free:right/unable_post",
+     "frozen": 0.18649193548387097,
+     "corrected": 0.18690176322418137
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural recall|strict/diff",
+     "frozen": -0.18007662835249041,
+     "corrected": -0.1785028790786948
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural recall|strict/ci_low",
+     "frozen": -0.22332226053317633,
+     "corrected": -0.22330194760797797
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural recall|strict/ci_high",
+     "frozen": -0.13270983105679368,
+     "corrected": -0.13240818350994296
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural recall|strict/n",
+     "frozen": 522.0,
+     "corrected": 521.0
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural recall|strict/conversations",
+     "frozen": 242.0,
+     "corrected": 241.0
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural recall|strict/revised",
+     "frozen": 0.19348659003831417,
+     "corrected": 0.19385796545105566
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural recall|strict/comparator",
+     "frozen": 0.3735632183908046,
+     "corrected": 0.3723608445297505
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural recall|lenient/diff",
+     "frozen": -0.05747126436781609,
+     "corrected": -0.05566218809980806
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural recall|lenient/ci_low",
+     "frozen": -0.09560744667452857,
+     "corrected": -0.09486203508561399
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural recall|lenient/ci_high",
+     "frozen": -0.016846948910546937,
+     "corrected": -0.015561197662364995
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural recall|lenient/n",
+     "frozen": 522.0,
+     "corrected": 521.0
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural recall|lenient/conversations",
+     "frozen": 242.0,
+     "corrected": 241.0
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural recall|lenient/revised",
+     "frozen": 0.19348659003831417,
+     "corrected": 0.19385796545105566
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural recall|lenient/comparator",
+     "frozen": 0.2509578544061303,
+     "corrected": 0.2495201535508637
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural false alarms|strict/diff",
+     "frozen": -0.15675403225806453,
+     "corrected": -0.1566750629722922
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural false alarms|strict/ci_low",
+     "frozen": -0.1724858016652209,
+     "corrected": -0.1723990241907675
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural false alarms|strict/ci_high",
+     "frozen": -0.13965103533399656,
+     "corrected": -0.13958167105508124
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural false alarms|strict/n",
+     "frozen": 1984.0,
+     "corrected": 1985.0
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural false alarms|strict/revised",
+     "frozen": 0.03477822580645161,
+     "corrected": 0.034760705289672546
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural false alarms|strict/comparator",
+     "frozen": 0.19153225806451613,
+     "corrected": 0.19143576826196473
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural false alarms|lenient/diff",
+     "frozen": -0.018649193548387098,
+     "corrected": -0.018639798488664986
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural false alarms|lenient/ci_low",
+     "frozen": -0.03005613876760143,
+     "corrected": -0.030041217873629133
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural false alarms|lenient/ci_high",
+     "frozen": -0.006662569345074806,
+     "corrected": -0.006655662659657929
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural false alarms|lenient/n",
+     "frozen": 1984.0,
+     "corrected": 1985.0
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural false alarms|lenient/revised",
+     "frozen": 0.03477822580645161,
+     "corrected": 0.034760705289672546
+    },
+    {
+     "path": "/change4_posthoc/program_v2_qwen32b/diffs/natural false alarms|lenient/comparator",
+     "frozen": 0.05342741935483871,
+     "corrected": 0.05340050377833753
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/groups/free:wrong/n",
+     "frozen": 516.0,
+     "corrected": 515.0
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/groups/free:wrong/trip",
+     "frozen": 0.33527131782945735,
+     "corrected": 0.3320388349514563
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/groups/free:wrong/trip_post",
+     "frozen": 0.35852713178294576,
+     "corrected": 0.3553398058252427
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/groups/free:wrong/unable",
+     "frozen": 0.2441860465116279,
+     "corrected": 0.2446601941747573
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/groups/free:wrong/unable_post",
+     "frozen": 0.1937984496124031,
+     "corrected": 0.1941747572815534
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/groups/free:right/n",
+     "frozen": 2021.0,
+     "corrected": 2022.0
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/groups/free:right/trip",
+     "frozen": 0.09104403760514597,
+     "corrected": 0.09099901088031652
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/groups/free:right/trip_post",
+     "frozen": 0.09599208312716477,
+     "corrected": 0.09594460929772503
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/groups/free:right/unable",
+     "frozen": 0.17763483424047502,
+     "corrected": 0.17754698318496537
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/groups/free:right/unable_post",
+     "frozen": 0.11281543790202869,
+     "corrected": 0.11275964391691394
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural recall|strict/diff",
+     "frozen": -0.03294573643410853,
+     "corrected": -0.03300970873786408
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural recall|strict/ci_low",
+     "frozen": -0.08217014553451472,
+     "corrected": -0.08383233532934131
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural recall|strict/ci_high",
+     "frozen": 0.01556420233463035,
+     "corrected": 0.015597605671021019
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural recall|strict/n",
+     "frozen": 516.0,
+     "corrected": 515.0
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural recall|strict/conversations",
+     "frozen": 240.0,
+     "corrected": 239.0
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural recall|strict/revised",
+     "frozen": 0.35852713178294576,
+     "corrected": 0.3553398058252427
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural recall|strict/comparator",
+     "frozen": 0.39147286821705424,
+     "corrected": 0.3883495145631068
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural recall|lenient/diff",
+     "frozen": 0.05426356589147287,
+     "corrected": 0.05436893203883495
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural recall|lenient/ci_low",
+     "frozen": 0.0020079315257020064,
+     "corrected": 0.0019304089390794594
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural recall|lenient/ci_high",
+     "frozen": 0.10537958381100253,
+     "corrected": 0.10621366071802046
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural recall|lenient/n",
+     "frozen": 516.0,
+     "corrected": 515.0
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural recall|lenient/conversations",
+     "frozen": 240.0,
+     "corrected": 239.0
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural recall|lenient/revised",
+     "frozen": 0.35852713178294576,
+     "corrected": 0.3553398058252427
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural recall|lenient/comparator",
+     "frozen": 0.30426356589147285,
+     "corrected": 0.30097087378640774
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural false alarms|strict/diff",
+     "frozen": -0.06086095992083127,
+     "corrected": -0.06083086053412463
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural false alarms|strict/ci_low",
+     "frozen": -0.07932918445961838,
+     "corrected": -0.07932633561192579
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural false alarms|strict/ci_high",
+     "frozen": -0.042908540132688536,
+     "corrected": -0.04288767164522455
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural false alarms|strict/n",
+     "frozen": 2021.0,
+     "corrected": 2022.0
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural false alarms|strict/revised",
+     "frozen": 0.09599208312716477,
+     "corrected": 0.09594460929772503
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural false alarms|strict/comparator",
+     "frozen": 0.15685304304799605,
+     "corrected": 0.15677546983184965
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural false alarms|lenient/diff",
+     "frozen": 0.015338941118258289,
+     "corrected": 0.01533135509396637
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural false alarms|lenient/ci_high",
+     "frozen": 0.030578218903660526,
+     "corrected": 0.030577462173953397
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural false alarms|lenient/n",
+     "frozen": 2021.0,
+     "corrected": 2022.0
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural false alarms|lenient/revised",
+     "frozen": 0.09599208312716477,
+     "corrected": 0.09594460929772503
+    },
+    {
+     "path": "/change4_posthoc/program_v2_deepseek/diffs/natural false alarms|lenient/comparator",
+     "frozen": 0.08065314200890648,
+     "corrected": 0.08061325420375866
+    }
+   ]
+  }
+ }
+}

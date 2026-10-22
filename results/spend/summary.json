@@ -1,0 +1,133 @@
+{
+ "models": {},
+ "breakers": {},
+ "spend": {
+  "dates": [
+   "2026-10-06",
+   "2026-10-19"
+  ],
+  "total_usd": 31.399113,
+  "openrouter_credits_usd": 29.922914,
+  "byok_inference_usd": 1.476199,
+  "by_model": {
+   "qwen/qwen3-32b": {
+    "usage": 10.958212,
+    "byok": 0.0,
+    "requests": 37254
+   },
+   "deepseek/deepseek-chat-v3-0324": {
+    "usage": 12.096172999999999,
+    "byok": 0.0,
+    "requests": 36010
+   },
+   "meta-llama/llama-4-maverick": {
+    "usage": 4.450378,
+    "byok": 0.0,
+    "requests": 10680
+   },
+   "mistralai/mistral-large-2512": {
+    "usage": 0.002737,
+    "byok": 1.476199,
+    "requests": 7020
+   },
+   "qwen/qwen3-14b": {
+    "usage": 2.415414,
+    "byok": 0.0,
+    "requests": 7639
+   }
+  },
+  "by_day": [
+   {
+    "date": "2026-10-07",
+    "model": "qwen/qwen3-32b",
+    "usage": 0.357262,
+    "byok": 0.0,
+    "requests": 1319
+   },
+   {
+    "date": "2026-10-13",
+    "model": "deepseek/deepseek-chat-v3-0324",
+    "usage": 1.389015,
+    "byok": 0.0,
+    "requests": 6947
+   },
+   {
+    "date": "2026-10-13",
+    "model": "meta-llama/llama-4-maverick",
+    "usage": 4.291054,
+    "byok": 0.0,
+    "requests": 10362
+   },
+   {
+    "date": "2026-10-13",
+    "model": "mistralai/mistral-large-2512",
+    "usage": 0.002737,
+    "byok": 1.476199,
+    "requests": 7020
+   },
+   {
+    "date": "2026-10-13",
+    "model": "qwen/qwen3-32b",
+    "usage": 3.087375,
+    "byok": 0.0,
+    "requests": 11753
+   },
+   {
+    "date": "2026-10-14",
+    "model": "qwen/qwen3-14b",
+    "usage": 2.415414,
+    "byok": 0.0,
+    "requests": 7639
+   },
+   {
+    "date": "2026-10-14",
+    "model": "qwen/qwen3-32b",
+    "usage": 0.479357,
+    "byok": 0.0,
+    "requests": 1644
+   },
+   {
+    "date": "2026-10-17",
+    "model": "deepseek/deepseek-chat-v3-0324",
+    "usage": 2.288299,
+    "byok": 0.0,
+    "requests": 8285
+   },
+   {
+    "date": "2026-10-17",
+    "model": "meta-llama/llama-4-maverick",
+    "usage": 0.159324,
+    "byok": 0.0,
+    "requests": 318
+   },
+   {
+    "date": "2026-10-17",
+    "model": "qwen/qwen3-32b",
+    "usage": 1.860859,
+    "byok": 0.0,
+    "requests": 6031
+   },
+   {
+    "date": "2026-10-18",
+    "model": "deepseek/deepseek-chat-v3-0324",
+    "usage": 8.052049,
+    "byok": 0.0,
+    "requests": 20362
+   },
+   {
+    "date": "2026-10-18",
+    "model": "qwen/qwen3-32b",
+    "usage": 5.173359,
+    "byok": 0.0,
+    "requests": 16507
+   },
+   {
+    "date": "2026-10-19",
+    "model": "deepseek/deepseek-chat-v3-0324",
+    "usage": 0.36681,
+    "byok": 0.0,
+    "requests": 416
+   }
+  ]
+ }
+}

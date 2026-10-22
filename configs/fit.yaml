@@ -1,0 +1,19 @@
+# Fitting half for the transmission model on TRAIN conversations (optional, for a second check
+# that the fitted a and s carry over from train to dev). Same models as main.yaml.
+split: train
+min_turns: 3
+sample: 300
+seed: 1
+workers: 8
+max_tokens: 8192           # raised from 4,096 on 7 Oct 2026; see CHANGELOG.md R13
+out: results/fit_train
+cache: cache/replies.sqlite
+models:
+  - qwen/qwen3-32b
+providers:
+  qwen/qwen3-32b: DeepInfra
+request_extra:
+  qwen/qwen3-32b: {reasoning: {max_tokens: 2048}}
+error_types: [scale, sign, percent, period, line_item, digits]
+types_per_turn: 2
+breakers: []

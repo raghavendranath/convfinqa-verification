@@ -1,0 +1,220 @@
+conv,turn,question,program,gold,parents_found,value_parents (fill in),reference_parents (fill in),note
+Single_HII/2017/page_124.pdf-1,0,what is the total number of securities approved by security holders?,"add(448859, 4087587)",4536446,,-,-,
+Single_HII/2017/page_124.pdf-1,1,what about the number of securities to be issued upon exercise of outstanding options warrants and rights?,448859,448859,,-,-,Read the issued securities from the report; the full question states the quantity.
+Single_HII/2017/page_124.pdf-1,2,what proportion does this represent?,"add(448859, 4087587), divide(448859, #0)",0.09895,0 1,0 1,-,Divide Turn 1's issued securities by Turn 0's total.
+Single_GS/2017/page_143.pdf-1,0,what was the value of credit net in 2017?,1505,1505,,-,-,
+Single_GS/2017/page_143.pdf-1,1,what was it in 2016?,2504,2504,,-,0,Fresh 2016 lookup; Turn 0 identifies credit net.
+Single_GS/2017/page_143.pdf-1,2,what is the net change?,"subtract(1505, 2504)",-999,0 1,0 1,-,Subtract the two previously supplied annual values.
+Single_GS/2017/page_143.pdf-1,3,what was the 2016 value?,2504,2504,1,-,0,Fresh 2016 lookup; Turn 0 names credit net. Turn 1 merely asked for the same value.
+Single_GS/2017/page_143.pdf-1,4,what was the change over the 2016 value?,"subtract(1505, 2504), divide(#0, 2504)",-0.39896,0 1 2 3,1 2 3,0,"Use Turn 2's change and both occurrences of the 2016 value. Turn 0 supplies the subject, not a direct number."
+Single_LKQ/2016/page_26.pdf-2,0,what was the change in the return of the lkq corporation from 2011 to 2016?,"subtract(204, 100)",104,,-,-,
+Single_LKQ/2016/page_26.pdf-2,1,"and how much does this change represent in relation to the return of that stock in 2011, in percentage?","subtract(204, 100), divide(#0, 100)",1.04,0,0,-,Use the change from Turn 0; the 2011 base is read from the report.
+Single_LKQ/2016/page_26.pdf-2,2,what was the change in the return of the s&p 500 index from 2011 to 2016?,"subtract(204, 100), divide(#0, 100), subtract(178, 100)",78,0 1,-,-,Fully stated S&P 500 question; read and subtract report values. Ignore carried-over LKQ steps.
+Single_LKQ/2016/page_26.pdf-2,3,and what was that return in 2011?,100,100,,-,2,Fresh lookup of the S&P 500 base; Turn 2 identifies that index.
+Single_LKQ/2016/page_26.pdf-2,4,"how much, then, does that change represent in relation to this 2011 return, in percentage?","subtract(204, 100), divide(#0, 100), subtract(178, 100), divide(#2, 100)",0.78,0 1 2 3,2 3,-,Divide the S&P change from Turn 2 by the base from Turn 3.
+Single_LKQ/2016/page_26.pdf-2,5,and what is the difference between the lkq corporation percentage and this s&p 500 index one?,"subtract(204, 100), divide(#0, 100), subtract(178, 100), divide(#2, 100), subtract(#1, #3)",0.26,0 1 2 3 4,1 4,-,Subtract the two previously computed percentages.
+Single_ADBE/2018/page_86.pdf-1,0,what was the total gross amount of unrecognized tax benefits in 2018?,196152,196152,,-,-,
+Single_ADBE/2018/page_86.pdf-1,1,what was the value in 2017?,172945,172945,,-,0,Fresh 2017 lookup; Turn 0 identifies unrecognized tax benefits.
+Single_ADBE/2018/page_86.pdf-1,2,what is the net change?,"subtract(196152, 172945)",23207,0 1,0 1,-,Subtract the supplied 2018 and 2017 values.
+Single_ADBE/2018/page_86.pdf-1,3,what is the percent change?,"subtract(196152, 172945), divide(#0, 172945)",0.13419,0 1 2,1 2,0,Divide Turn 2's change by Turn 1's 2017 value; Turn 0 names the quantity.
+Single_JPM/2007/page_33.pdf-2,0,what were investment banking fees in 2007?,6635,6635,,-,-,
+Single_JPM/2007/page_33.pdf-2,1,what were they in 2006?,5520,5520,,-,0,Fresh 2006 lookup; they means the investment banking fees named in Turn 0.
+Single_JPM/2007/page_33.pdf-2,2,what is the difference of the 2007 value less that in 2006?,"subtract(6635, 5520)",1115,0 1,0 1,-,Subtract the 2006 answer from the 2007 answer.
+Single_JPM/2007/page_33.pdf-2,3,what is the net change divided by the 2006 value?,"subtract(6635, 5520), divide(#0, 5520)",0.20199,0 1 2,1 2,0,Use the difference from Turn 2 and the 2006 answer from Turn 1; Turn 0 identifies investment banking fees.
+Single_ETR/2002/page_86.pdf-4,0,what were the total payments made for the notes entergy issued to nypa that lasted 7 years?,"multiply(108, const_7)",756,,-,-,
+Single_ETR/2002/page_86.pdf-4,1,and the amount of the installment that was paid for eight years?,20,20,,-,0,Fresh lookup of the eight-year installment; Turn 0 supplies the Entergy/NYPA context.
+Single_ETR/2002/page_86.pdf-4,2,and the total amount of these installments?,"multiply(108, const_7), multiply(20, const_8)",160,0 1,1,-,Multiply Turn 1's installment by the eight years stated in that turn.
+Single_ETR/2002/page_86.pdf-4,3,"combined, what was the sum of the notes entergy issued to nypa?","multiply(108, const_7), multiply(20, const_8), add(#1, #0)",916,0 1 2,0 2,-,Combine the two total-payment answers. Turn 1 is only an input to Turn 2.
+Double_AMT/2012/page_125.pdf,0,"what was the total cost of the all the towers in the mtn group acquisition, in millions of dollars?",173.2,173.2,,-,-,
+Double_AMT/2012/page_125.pdf,1,and what is that in dollars?,"multiply(173.2, const_1000000)",173200000,0,0,-,Convert Turn 0's cost from millions to dollars.
+Double_AMT/2012/page_125.pdf,2,and what was the number of towers bought?,962,962,,-,0,Fresh tower-count lookup; Turn 0 identifies the MTN acquisition.
+Double_AMT/2012/page_125.pdf,3,"what was, then, their average price?","multiply(173.2, const_1000000), divide(#0, 962)",180041.58,0 1 2,1 2,0,Divide the dollar cost from Turn 1 by the tower count from Turn 2. Turn 0 names the acquisition.
+Double_AMT/2012/page_125.pdf,4,"and concerning that total cost, by how much did it change with the adjustments?","subtract(173.2, 171.5)",1.7,0,0,-,Compare the original cost from Turn 0 with the adjusted cost in the report; the dollars conversion is not a direct input.
+Single_DRE/2007/page_59.pdf-2,0,what is the total goodwill?,14722,14722,,-,-,
+Single_DRE/2007/page_59.pdf-2,1,what about total assets?,867558,867558,,-,-,Fully stated assets lookup; what about does not itself create a reference.
+Single_DRE/2007/page_59.pdf-2,2,what fraction comes from goodwill?,"divide(14722, 867558)",0.01697,0 1,0 1,-,Use goodwill and total assets from the two earlier answers.
+Single_DRE/2007/page_59.pdf-2,3,what about in percentage?,"divide(14722, 867558), multiply(#0, const_100)",1.69695,0 1 2,2,-,Convert Turn 2's fraction to a percentage; its question identifies goodwill.
+Single_LKQ/2010/page_84.pdf-4,0,what was the lease payments to the employee who became an officer of the company following his business acquisition in 2008?,0.9,0.9,,-,-,
+Single_LKQ/2010/page_84.pdf-4,1,and in 2009?,0.9,0.9,0,-,0,Fresh 2009 lookup; Turn 0 identifies the employee's lease payments.
+Single_LKQ/2010/page_84.pdf-4,2,so what was the total payment for these two years?,"add(0.9, 0.9)",1.8,0 1,0 1,-,Sum the separately supplied 2008 and 2009 payments; the equal values concern different years.
+Single_LKQ/2010/page_84.pdf-4,3,and including the value for 2010?,"add(0.9, 0.9), add(#0, 1.0)",2.8,0 1 2,2,0,Add the report's 2010 payment to Turn 2's subtotal; Turn 0 identifies the particular lease payments.
+Single_PM/2017/page_38.pdf-4,0,what was the operating income in 2017?,11503,11503,,-,-,
+Single_PM/2017/page_38.pdf-4,1,and what was it in 2016?,10815,10815,,-,0,Fresh 2016 lookup; it refers to operating income in Turn 0.
+Single_PM/2017/page_38.pdf-4,2,"what was, then, the change over the year?","subtract(11503, 10815)",688,0 1,0 1,-,Subtract the annual operating-income answers.
+Single_PM/2017/page_38.pdf-4,3,what was the operating income in 2016?,10815,10815,1,-,-,Fully stated repeat lookup of 2016 operating income.
+Single_PM/2017/page_38.pdf-4,4,"and how much does that change represent in relation to this 2016 operating income, in percentage?","subtract(11503, 10815), divide(#0, 10815)",0.06362,0 1 2 3,1 2 3,-,Use the change and both occurrences of the 2016 value. The current question explicitly names operating income.
+Double_UNP/2015/page_24.pdf,0,what was the free cash flow in 2015?,524,524,,-,-,
+Double_UNP/2015/page_24.pdf,1,and what was the cash provided by operating activities in that same year?,7344,7344,,-,0,Fresh operating-cash lookup; same year refers to 2015 in Turn 0.
+Double_UNP/2015/page_24.pdf,2,"how much, then, did the first represent in relation to the second?","divide(524, 7344)",0.07135,0 1,0 1,-,Divide the first answer by the second answer.
+Double_UNP/2015/page_24.pdf,3,"and concerning that free cash flow, what was the change in it between the two previous years, from 2013 to 2014?","subtract(1504, 2085)",-581,,-,-,New calculation from the report; the question explicitly names free cash flow and both years.
+Double_UNP/2015/page_24.pdf,4,what is this change as a percent of the 2013 free cash flow?,"subtract(1504, 2085), divide(#0, 2085)",-0.27866,3,3,-,Use Turn 3's change; the 2013 free cash flow is newly read from the report.
+Single_PPG/2013/page_40.pdf-3,0,what was the research and development net in 2013?,488,488,,-,-,
+Single_PPG/2013/page_40.pdf-3,1,and for 2012?,453,453,,-,0,Fresh 2012 lookup; Turn 0 identifies net research and development.
+Single_PPG/2013/page_40.pdf-3,2,so what was the difference between these two years?,"subtract(488, 453)",35,0 1,0 1,-,Subtract the two supplied yearly values.
+Single_PPG/2013/page_40.pdf-3,3,and the percentage change during this time?,"subtract(488, 453), divide(#0, 453)",0.07726,0 1 2,1 2,0,Use the difference and the 2012 base; Turn 0 identifies net research and development.
+Double_C/2008/page_102.pdf,0,what was the tier 2 capital in 2008?,"subtract(108.4, 71.0)",37.4,,-,-,
+Double_C/2008/page_102.pdf,1,and what was it in 2007?,"subtract(108.4, 71.0), subtract(121.6, 82.0)",39.6,0,-,0,Compute 2007 Tier 2 capital from report inputs; it refers to Tier 2 capital in Turn 0.
+Double_C/2008/page_102.pdf,2,"how much, then, did the 2008 amount represent in relation to this 2007 one?","subtract(108.4, 71.0), subtract(121.6, 82.0), divide(#0, #1)",0.94444,0 1,0 1,-,Divide the two previously computed Tier 2 capital answers.
+Double_C/2008/page_102.pdf,3,"and in that last year of the period, what was the total capital?",108.4,108.4,,-,2,"Fresh total-capital lookup; read the two-year period in Turn 2. Last year is interpreted chronologically as 2008, consistent with the shown answer."
+Double_C/2008/page_102.pdf,4,what was it in 2007?,121.6,121.6,,-,3,Fresh 2007 lookup; Turn 3 names total capital.
+Double_C/2008/page_102.pdf,5,"by how much, then, did it increase over the year?","subtract(108.4, 121.6)",-13.2,3 4,3 4,-,Subtract the supplied total-capital values; the negative answer represents a decrease.
+Double_ZBH/2003/page_40.pdf,0,what was the operating profit for the americas as a percentage of net sales in 2003?,51.2,51.2,,-,-,
+Double_ZBH/2003/page_40.pdf,1,and what was it in 2001?,47.4,47.4,,-,0,Fresh 2001 lookup; Turn 0 identifies the Americas operating-profit margin.
+Double_ZBH/2003/page_40.pdf,2,"by what amount, then, did it change over the years?","subtract(51.2, 47.4)",3.8,0 1,0 1,-,Subtract the two supplied margin values.
+Double_ZBH/2003/page_40.pdf,3,"and what was this change but for the operating profit for europe as a percentage of net sales, in the same period?","subtract(26.3, 19.5)",6.8,,-,0 1 2,Fresh Europe calculation. Turns 0 and 1 give 2003 and 2001; Turn 2 identifies the absolute-change comparison requested by this change.
+Single_AON/2014/page_47.pdf-3,0,what was total operating income in 2013?,1.6,1.6,,-,-,
+Single_AON/2014/page_47.pdf-3,1,what is that times 1000?,"multiply(1.6, const_1000)",1600,0,0,-,Multiply Turn 0's answer by 1000.
+Single_AON/2014/page_47.pdf-3,2,what is that less the operating income growth value in 2013?,"multiply(1.6, const_1000), subtract(#0, 108)",1492,0 1,1,-,Subtract the report's growth amount from Turn 1's converted answer; the current question names operating income.
+Single_FIS/2007/page_94.pdf-3,0,what was the rent expense in 2007?,106.4,106.4,,-,-,
+Single_FIS/2007/page_94.pdf-3,1,and what was it in 2006?,81.5,81.5,,-,0,Fresh 2006 lookup; it refers to rent expense.
+Single_FIS/2007/page_94.pdf-3,2,"what was, then, the change over the year?","subtract(106.4, 81.5)",24.9,0 1,0 1,-,Subtract the two supplied annual rent expenses.
+Single_FIS/2007/page_94.pdf-3,3,what was the rent expense in 2006?,81.5,81.5,1,-,-,Fully stated repeat lookup of 2006 rent expense.
+Single_FIS/2007/page_94.pdf-3,4,"and how much does that change represent in relation to this 2006 rent expense, in percentage?","subtract(106.4, 81.5), divide(#0, 81.5)",0.30552,0 1 2 3,1 2 3,-,Use the change and both occurrences of the 2006 answer; rent expense is explicitly named here.
+Double_RSG/2015/page_142.pdf,0,what was the ratio of the 2016 hedged gallons to 2017?,"divide(27000000, 12000000)",2.25,,-,-,
+Double_RSG/2015/page_142.pdf,1,what was the change in the aggregate fair values of outstanding fuel hedge between 2014 and 2015?,"subtract(37.8, 34.4)",3.4,,-,-,New fully stated fuel-hedge fair-value calculation; the hedged-gallons ratio is unrelated.
+Double_RSG/2015/page_142.pdf,2,so what was the percentage change during this time?,"subtract(37.8, 34.4), divide(#0, 34.4)",0.09884,1,1,-,Use Turn 1's change; the 2014 fair value is newly read from the report.
+Single_FRT/2005/page_117.pdf-2,0,what is the value of accumulated depreciation and amortization at the end of 2005?,663750000,663750000,,-,-,
+Single_FRT/2005/page_117.pdf-2,1,what is the balance at the end of 2004?,595338000,595338000,,-,-,Fresh 2004 lookup. The report has a single balance series and the question explicitly names balance and year.
+Single_FRT/2005/page_117.pdf-2,2,what is the ratio of 2005 to 2004?,"divide(663750000, 595338000)",1.11491,0 1,0 1,-,Divide the supplied 2005 balance by the supplied 2004 balance.
+Single_FRT/2005/page_117.pdf-2,3,what is that less 1?,"divide(663750000, 595338000), subtract(#0, const_1)",0.11491,0 1 2,2,-,Subtract one from Turn 2's ratio; no earlier numeric inputs are directly reused.
+Single_AMT/2012/page_125.pdf-1,0,"what was the final aggregate purchase price of all towers, in millions of dollars?",173.2,173.2,,-,-,
+Single_AMT/2012/page_125.pdf-1,1,and how much is that in dollars?,"multiply(173.2, const_1000000)",173200000,0,0,-,Convert Turn 0's purchase price into dollars.
+Single_AMT/2012/page_125.pdf-1,2,"what was, then, the average price paid for each tower?","multiply(173.2, const_1000000), divide(#0, 962)",180041.58,0 1,1,-,Divide Turn 1's dollar cost by the report's tower count. The question explicitly asks for price per tower.
+Single_AES/2017/page_175.pdf-1,0,what is the total of receivables from puerto rico?,86,86,,-,-,
+Single_AES/2017/page_175.pdf-1,1,what was the amount overdue?,53,53,,-,0,Fresh overdue-amount lookup; Turn 0 supplies the Puerto Rico receivables subject.
+Single_AES/2017/page_175.pdf-1,2,what is the difference?,"subtract(86, 53)",33,0 1,0 1,-,Subtract overdue receivables from the supplied total.
+Single_AES/2017/page_175.pdf-1,3,what was the total?,86,86,0,-,0,Fresh repeat lookup; Turn 0 identifies the total receivables.
+Single_AES/2017/page_175.pdf-1,4,what is the difference over the total value?,"subtract(86, 53), divide(#0, 86)",0.38372,0 1 2 3,0 2 3,-,Divide Turn 2's difference by the total answered in both Turns 0 and 3.
+Single_HII/2017/page_124.pdf-2,0,what is the number of securities to be issued upon exercise of outstanding options warrants and rights under equity compensation plans approved by security holders?,448859,448859,,-,-,
+Single_HII/2017/page_124.pdf-2,1,and what is the number of securities remaining available for future issuance under those equity compensation plans?,4087587,4087587,,-,0,Fresh remaining-securities lookup; those plans means the approved plans named in Turn 0.
+Single_HII/2017/page_124.pdf-2,2,"what is, then, the combined total of securities between those two numbers?","add(448859, 4087587)",4536446,0 1,0 1,-,Add the two supplied securities counts.
+Single_HII/2017/page_124.pdf-2,3,what is the number of securities remaining available for future issuance under equity compensation plans approved by security holders?,4087587,4087587,1,-,-,Fully stated repeat lookup of remaining securities under approved plans.
+Single_HII/2017/page_124.pdf-2,4,and how much does this number represent in relation to that combined total?,"add(448859, 4087587), divide(4087587, #0)",0.90105,0 1 2 3,1 2 3,-,Use the combined total and both occurrences of the remaining-securities count.
+Single_LMT/2010/page_42.pdf-3,0,what is the net cash from operating and investing activities?,"add(3547, -319)",3228,,-,-,
+Single_LMT/2010/page_42.pdf-3,1,what is the net cash from financing activities?,-3363,-3363,,-,-,"Independent, explicitly named financing-cash lookup."
+Single_LMT/2010/page_42.pdf-3,2,what is the total net cash flow?,"add(3547, -319), add(#0, -3363)",-135,0 1,0 1,-,Add the operating/investing subtotal and financing cash answer.
+Single_HWM/2016/page_40.pdf-2,0,what was the high sales price in the second quarter of 2016?,34.5,34.5,,-,-,
+Single_HWM/2016/page_40.pdf-2,1,what was the high price in the first quarter?,30.66,30.66,,-,0,Fresh first-quarter lookup; Turn 0 supplies 2016. The report's duplicate year headers are flagged separately.
+Single_HWM/2016/page_40.pdf-2,2,"what is the ratio of the high prices, second quarter to first quarter?","divide(34.50, 30.66)",1.12524,0 1,0 1,-,Divide the two earlier high-price answers.
+Single_HWM/2016/page_40.pdf-2,3,what is that less 1?,"divide(34.50, 30.66), subtract(#0, const_1)",0.12524,0 1 2,2,-,Subtract one from Turn 2's ratio.
+Single_MRO/2009/page_139.pdf-1,0,what is the net rental expense in 2009?,257,257,,-,-,
+Single_MRO/2009/page_139.pdf-1,1,what about in 2007?,242,242,,-,0,Fresh 2007 lookup; Turn 0 identifies net rental expense.
+Single_MRO/2009/page_139.pdf-1,2,what is the net change?,"subtract(257, 242)",15,0 1,0 1,-,Subtract the supplied 2007 value from the 2009 value.
+Single_MRO/2009/page_139.pdf-1,3,what percentage change does this represent?,"subtract(257, 242), divide(#0, 242)",0.06198,0 1 2,1 2,0,Divide Turn 2's change by Turn 1's base; Turn 0 names net rental expense.
+Single_IPG/2008/page_62.pdf-4,0,what was the total liability by the end of 2008?,29.6,29.6,,-,-,
+Single_IPG/2008/page_62.pdf-4,1,and what was it by the end of 2007?,12.8,12.8,,-,0,Fresh lookup; Turn 0 identifies total restructuring liability. The two supplied year values appear swapped.
+Single_IPG/2008/page_62.pdf-4,2,"what was, then, the change over the year?","subtract(29.6, 12.8)",16.8,0 1,0 1,-,Subtract the two earlier answers as the conversation presents them.
+Single_IPG/2008/page_62.pdf-4,3,what was the total liability by the end of 2008?,29.6,29.6,0,-,-,Fully stated repeat lookup; the supplied answer repeats Turn 0 despite the source year discrepancy.
+Single_IPG/2008/page_62.pdf-4,4,and how much does that change represent in relation to this 2008 total liability?,"subtract(29.6, 12.8), divide(#0, 29.6)",0.56757,0 1 2 3,0 2 3,-,Use Turn 2's change and both occurrences of the stated 2008 total. The current question names total liability.
+Single_IPG/2008/page_62.pdf-4,5,how much is that in percentage?,"subtract(29.6, 12.8), divide(#0, 29.6), multiply(#1, const_100)",56.75676,0 1 2 3 4,4,-,Convert the immediately preceding ratio into percentage units.
+Single_ALXN/2007/page_104.pdf-2,0,what was the minimum annual rental payment in 2011?,3200,3200,,-,-,
+Single_ALXN/2007/page_104.pdf-2,1,what was it in 2010?,3160,3160,,-,0,Fresh 2010 lookup; Turn 0 identifies minimum annual rental payments.
+Single_ALXN/2007/page_104.pdf-2,2,what is the difference?,"subtract(3200, 3160)",40,0 1,0 1,-,Subtract the supplied annual payments.
+Single_ALXN/2007/page_104.pdf-2,3,what is the percent change?,"subtract(3200, 3160), divide(#0, 3160)",0.01266,0 1 2,1 2,0,Divide the difference by the 2010 base; Turn 0 supplies the rental-payment subject.
+Single_MRO/2006/page_33.pdf-2,0,what is the buy/sell volume in 2006?,24,24,,-,-,
+Single_MRO/2006/page_33.pdf-2,1,what is the value in 2005?,77,77,,-,0,Fresh 2005 lookup; Turn 0 identifies matching buy/sell volume.
+Single_MRO/2006/page_33.pdf-2,2,what is the sum of those two years?,"add(24, 77)",101,0 1,0 1,-,Add the supplied 2006 and 2005 volumes.
+Single_MRO/2006/page_33.pdf-2,3,what is the total sum including the 2004 value?,"add(24, 77), add(#0, 71)",172,0 1 2,2,0,Add the report's 2004 buy/sell volume to Turn 2's subtotal; Turn 0 identifies the volume series.
+Single_STT/2011/page_83.pdf-2,0,what was the fair value in 2011?,99832,99832,,-,-,
+Single_STT/2011/page_83.pdf-2,1,what was it in 2010?,81881,81881,,-,0,Fresh 2010 lookup; it means fair value from Turn 0.
+Single_STT/2011/page_83.pdf-2,2,what is the net change?,"subtract(99832, 81881)",17951,0 1,0 1,-,Subtract the two supplied fair values.
+Single_STT/2011/page_83.pdf-2,3,what is the net change over the 2010 value?,"subtract(99832, 81881), divide(#0, 81881)",0.21923,0 1 2,1 2,0,Divide Turn 2's change by the 2010 answer; Turn 0 names fair value.
+Double_SNPS/2006/page_69.pdf,0,"what was the total of intangible assets, in millions?",8.5,8.5,,-,-,
+Double_SNPS/2006/page_69.pdf,1,what is that in thousands?,"multiply(8.5, const_1000)",8500,0,0,-,Convert Turn 0's intangible-assets total to thousands.
+Double_SNPS/2006/page_69.pdf,2,and what percentage did this total represent in relation to the total purchase price?,"multiply(8.5, const_1000), divide(#0, 15704)",0.54126,0 1,1,0,Use Turn 1's converted total and the report's purchase price; Turn 0 identifies intangible assets.
+Double_SNPS/2006/page_69.pdf,3,and what percentage did the goodwill represent?,"multiply(3.4, const_1000), divide(#0, 15704)",0.21651,,-,2,New goodwill ratio from report values; Turn 2 supplies the unstated purchase-price denominator. Reusing that report input is not numerical dependence on Turn 2.
+Single_IPG/2008/page_93.pdf-3,0,what is the total of estimated future contingent acquisition obligations payable in cash in 2009?,76.7,76.7,,-,-,
+Single_IPG/2008/page_93.pdf-3,1,what is it in 2013?,75.6,75.6,,-,0,Fresh 2013 lookup; Turn 0 identifies cash contingent-acquisition obligations.
+Single_IPG/2008/page_93.pdf-3,2,what is the net change?,"subtract(76.7, 75.6)",1.1,0 1,0 1,-,Subtract the supplied 2013 value from the 2009 value.
+Single_IPG/2008/page_93.pdf-3,3,what is the net change over the 2013 value?,"subtract(76.7, 75.6), divide(#0, 76.7)",0.01434,0 1 2,1 2,0,"Follow the wording: use the 2013 answer and the change. The supplied program instead divides by the 2009 value, so this requires adjudication."
+Single_IPG/2008/page_93.pdf-3,4,what is that times 100?,"subtract(76.7, 75.6), divide(#0, 76.7), multiply(#1, const_100)",1.43416,0 1 2 3,3,-,Multiply Turn 3's answer by 100; its earlier inputs are indirect.
+Single_LKQ/2016/page_26.pdf-1,0,what was the price of lkq corporation in 2016?,204,204,,-,-,
+Single_LKQ/2016/page_26.pdf-1,1,what was the price in 2011?,100,100,,-,0,Fresh 2011 lookup; Turn 0 identifies LKQ.
+Single_LKQ/2016/page_26.pdf-1,2,what is the net difference?,"subtract(204, 100)",104,0 1,0 1,-,Subtract the supplied 2011 value from the 2016 value.
+Single_LKQ/2016/page_26.pdf-1,3,what was the 2011 price?,100,100,1,-,0,Fresh repeat lookup; Turn 0 names LKQ and Turn 1 merely asked for the same value.
+Single_LKQ/2016/page_26.pdf-1,4,what is the change over the 2011 price?,"subtract(204, 100), divide(#0, 100)",1.04,0 1 2 3,1 2 3,0,Use the change and both 2011 answers; Turn 0 supplies the LKQ subject.
+Single_IPG/2008/page_62.pdf-1,0,what was the value of liability in 2007?,1.2,1.2,,-,-,
+Single_IPG/2008/page_62.pdf-1,1,what was it in 2003?,5.7,5.7,,-,0,Fresh lookup of the 2003 program's liability; Turn 0 identifies liability.
+Single_IPG/2008/page_62.pdf-1,2,what is the sum of those 2 years?,"add(1.2, 5.7)",6.9,0 1,0 1,-,Add the two supplied program liabilities; the question calls their labels years.
+Single_IPG/2008/page_62.pdf-1,3,what is the total sum including the 2001 value?,"add(1.2, 5.7), add(#0, 5.9)",12.8,0 1 2,2,0,Add the report's 2001-program liability to Turn 2's subtotal; Turn 0 supplies the liability subject.
+Single_IPG/2008/page_62.pdf-1,4,what is the average per year?,"add(1.2, 5.7), add(#0, 5.9), divide(#1, const_3)",4.26667,0 1 2 3,3,0 2,"Use Turn 3's total. Turn 0 identifies liability; Turn 2 states that the earlier subtotal covers two items, making three after Turn 3 adds one. The per-year wording is misleading for program labels."
+Single_AES/2016/page_191.pdf-2,0,what was the value of unrecognized tax benefits in 2016?,369,369,,-,-,
+Single_AES/2016/page_191.pdf-2,1,what was it in 2015?,373,373,,-,0,Fresh 2015 lookup; Turn 0 identifies unrecognized tax benefits.
+Single_AES/2016/page_191.pdf-2,2,what is the 2016 value less the 2015?,"subtract(369, 373)",-4,0 1,0 1,-,Subtract the two annual benefit answers.
+Single_AES/2016/page_191.pdf-2,3,what is the 2015 value?,373,373,1,-,0,Fresh repeat lookup; Turn 0 names unrecognized tax benefits.
+Single_AES/2016/page_191.pdf-2,4,what is the net change over the 2015 value?,"subtract(369, 373), divide(#0, 373)",-0.01072,0 1 2 3,1 2 3,0,Use the change and both occurrences of the 2015 answer; Turn 0 identifies the subject.
+Single_BDX/2018/page_82.pdf-3,0,what was the interest cost for 2018?,90,90,,-,-,
+Single_BDX/2018/page_82.pdf-3,1,and in 2017?,61,61,,-,0,Fresh 2017 lookup; Turn 0 identifies pension interest cost.
+Single_BDX/2018/page_82.pdf-3,2,"combined, what was the total cost for the two years?","add(90, 61)",151,0 1,0 1,-,Add the supplied 2018 and 2017 interest costs.
+Single_BDX/2018/page_82.pdf-3,3,and in 2016?,72,72,,-,0,Fresh 2016 lookup of interest cost; Turn 0 names that cost category.
+Single_BDX/2018/page_82.pdf-3,4,so what was the total for the three years?,"add(90, 61), add(#0, 72)",223,0 1 2 3,2 3,0,Add the two-year subtotal and the 2016 answer; Turn 0 identifies interest cost.
+Single_BDX/2018/page_82.pdf-3,5,and what was the average during this period?,"add(90, 61), add(#0, 72), divide(#1, const_3)",74.33333,0 1 2 3 4,4,0,Divide Turn 4's three-year total by three; Turn 0 supplies the interest-cost subject.
+Single_INTC/2013/page_33.pdf-3,0,what was the total of diluted earnings per common share as of december 2013?,1.89,1.89,,-,-,
+Single_INTC/2013/page_33.pdf-3,1,and what was it as of december 2012?,2.13,2.13,,-,0,Fresh 2012 lookup; Turn 0 identifies diluted earnings per common share.
+Single_INTC/2013/page_33.pdf-3,2,"what was, then, the change in that total over the year?","subtract(1.89, 2.13)",-0.24,0 1,0 1,-,Subtract the two supplied earnings-per-share answers.
+Single_INTC/2013/page_33.pdf-3,3,"and how much does this change represent in relation to the 2012 total of diluted earnings per common share, in percentage?","subtract(1.89, 2.13), divide(#0, 2.13)",-0.11268,0 1 2,1 2,-,Use the change and the 2012 base; the current question explicitly names diluted earnings per common share.
+Double_EW/2016/page_79.pdf,0,what is the amount of the goodwill?,258.9,258.9,,-,-,
+Double_EW/2016/page_79.pdf,1,and what is the total cash purchase price net of cash acquired?,320.1,320.1,,-,-,Fully stated independent lookup of net cash purchase price.
+Double_EW/2016/page_79.pdf,2,"what percentage, then, does that amount represent in relation to this purchase price?","divide(258.9, 320.1)",0.80881,0 1,0 1,-,Divide the earlier goodwill answer by the earlier net purchase price.
+Double_EW/2016/page_79.pdf,3,"and concerning that goodwill, what percentage does it represent in relation to the current assets?","divide(258.9, 28.1)",9.21352,0,0,-,Reuse Turn 0's goodwill answer and newly read current assets. Turn 2's ratio is not used.
+Double_PM/2018/page_24.pdf,0,what was the price performance of the pmi in 2014?,97.9,97.9,,-,-,
+Double_PM/2018/page_24.pdf,1,and by what amount did it change since 2013?,"subtract(97.90, const_100)",-2.1,0,0,-,Subtract the report's 2013 base of 100 from Turn 0's 2014 PMI price.
+Double_PM/2018/page_24.pdf,2,what is this amount as a portion of that price in 2013?,"subtract(97.90, const_100), divide(#0, const_100)",-0.021,0 1,1,0,Use Turn 1's change; Turn 0 identifies PMI for the 2013 base lookup.
+Double_PM/2018/page_24.pdf,3,and what was the change in the performance price of that stock for the full five years shown in the chart?,"subtract(96.50, const_100)",-3.5,,-,0,New 2013-2018 calculation from report values; that stock refers to PMI in Turn 0.
+Double_PM/2018/page_24.pdf,4,what is this five year change as a percent of the 2013 price?,"subtract(96.50, const_100), divide(#0, const_100)",-0.035,3,3,0,Use Turn 3's five-year change and the report's 2013 PMI base; Turn 0 names the stock.
+Double_PM/2018/page_24.pdf,5,"and in this same period, what was that change for the s&p 500 index?","subtract(96.50, const_100), divide(#0, const_100), subtract(150.30, const_100)",50.3,3 4,-,3,New S&P 500 calculation; Turn 3 establishes the full five-year chart interval and absolute-change comparison. Earlier PMI program steps are carried over only.
+Double_PM/2018/page_24.pdf,6,and what was this s&p 500 index change as a percentage of its price performance in 2013?,"subtract(96.50, const_100), divide(#0, const_100), subtract(150.30, const_100), divide(#2, const_100)",0.503,3 4 5,5,-,Use Turn 5's S&P change and the report's 2013 S&P base.
+Double_PM/2018/page_24.pdf,7,"what is, then, the difference between the pmi percentage and this s&p 500 index one for the five years?","subtract(96.50, const_100), divide(#0, const_100), subtract(150.30, const_100), divide(#2, const_100), subtract(#3, #1)",0.538,3 4 5 6,4 6,-,Compare the two previously computed five-year percentages.
+Double_CB/2010/page_200.pdf,0,what was the amount of statutory capital and surplus for bermuda subsidiaries in 2010?,11798,11798,,-,-,
+Double_CB/2010/page_200.pdf,1,and what was it in 2009?,9164,9164,,-,0,Fresh 2009 lookup; Turn 0 identifies Bermuda statutory capital and surplus.
+Double_CB/2010/page_200.pdf,2,"by how much, then, did it increase over the year?","subtract(11798, 9164)",2634,0 1,0 1,-,Subtract the earlier capital-and-surplus answers.
+Double_CB/2010/page_200.pdf,3,"in that same period, what was the change in the net income for those same bermuda subsidiaries?","subtract(2430, 2369)",61,,-,0 1,New net-income calculation; Turns 0 and 1 provide the unstated 2010-2009 interval. Capital answers are not inputs.
+Double_CB/2010/page_200.pdf,4,and what is this change as a portion of that income in 2009?,"subtract(2430, 2369), divide(#0, 2369)",0.02575,3,3,-,Use Turn 3's net-income change; the 2009 net-income base is newly read from the report.
+Single_HWM/2017/page_41.pdf-2,0,what is the highest stock price in the second quarter of 2017?,28.65,28.65,,-,-,
+Single_HWM/2017/page_41.pdf-2,1,what about the lowest stock price?,21.76,21.76,,-,0,Fresh low-price lookup; Turn 0 supplies second quarter of 2017.
+Single_HWM/2017/page_41.pdf-2,2,what is the sum of these two?,"add(28.65, 21.76)",50.41,0 1,0 1,-,Add the supplied high and low prices.
+Single_HWM/2017/page_41.pdf-2,3,what about the average?,"add(28.65, 21.76), divide(#0, const_2)",25.205,0 1 2,2,0 1,Divide Turn 2's sum by two; Turns 0 and 1 identify which high and low prices the average concerns.
+Single_STT/2009/page_73.pdf-3,0,what is the net change of securities between 2008 and 2009?,"subtract(72699, 54163)",18536,,-,-,
+Single_STT/2009/page_73.pdf-3,1,what is the fair value of securities in 2008?,54163,54163,,-,-,Fully stated 2008 fair-value lookup; shared inputs with Turn 0 do not create a value link.
+Single_STT/2009/page_73.pdf-3,2,what percentage change does this represent?,"subtract(72699, 54163), divide(#0, 54163)",0.34223,0 1,0 1,-,Divide Turn 0's change by Turn 1's 2008 fair value.
+Double_MAS/2018/page_35.pdf,0,what was the operating profit margin as adjusted in 2017?,15.70%,0.157,,-,-,
+Double_MAS/2018/page_35.pdf,1,and what was it in 2016?,15.10%,0.151,,-,0,Fresh 2016 lookup; Turn 0 names adjusted operating-profit margin.
+Double_MAS/2018/page_35.pdf,2,"what was, then, the change over the year?","subtract(15.7%, 15.1%)",0.006,0 1,0 1,-,Subtract the supplied annual margins.
+Double_MAS/2018/page_35.pdf,3,"and over the subsequent year, what was this change?","subtract(15.1%, 15.7%)",-0.006,0 1,0,2,Reuse the 2017 answer from Turn 0 and newly read 2018. Turn 2 supplies the subsequent annual-change comparison. The identical 2016/2018 margin is not a value link to Turn 1.
+Single_ABMD/2006/page_75.pdf-1,0,what were operating leases in 2007?,1703,1703,,-,-,
+Single_ABMD/2006/page_75.pdf-1,1,what were they in 2008?,1371,1371,,-,0,Fresh 2008 lookup; they means operating leases from Turn 0.
+Single_ABMD/2006/page_75.pdf-1,2,what is the net change from 2007 to 2008?,"subtract(1703, 1371)",332,0 1,0 1,-,Use the supplied annual lease payments; the shown positive answer is the decrease magnitude.
+Single_ABMD/2006/page_75.pdf-1,3,what was the 2007 value?,1703,1703,0,-,0,Fresh repeat lookup; Turn 0 names operating leases.
+Single_ABMD/2006/page_75.pdf-1,4,what is the percent decrease?,"subtract(1703, 1371), divide(#0, 1703)",0.19495,0 1 2 3,0 2 3,-,Divide Turn 2's decrease by both occurrences of the 2007 base.
+Single_AES/2003/page_52.pdf-2,0,"what was the total, in millions, of sales proceeds for subsidiaries assets in the months of december and august of 2003, combined, in the locations of bangladesh and republic of georgia?","add(145, 23)",168,,-,-,
+Single_AES/2003/page_52.pdf-2,1,"including november of that year, what then becomes that total?","add(145, 23), add(#0, 78)",246,0,0,-,Add the report's November proceeds to Turn 0's subtotal; Turn 0 also supplies the year.
+Single_AES/2003/page_52.pdf-2,2,"what were the total sales proceeds for subsidiaries assets in december 2003 in pakistan/oman, in millions?",150,150,,-,-,Fully stated independent lookup for Pakistan/Oman in December 2003.
+Single_AES/2003/page_52.pdf-2,3,"including these total sales, what then becomes that total, also in millions?","add(145, 23), add(#0, 78), add(#1, 150)",396,0 1 2,1 2,-,Add Turn 2's proceeds to Turn 1's running total; Turn 0's number is indirect.
+Double_ADBE/2018/page_86.pdf,0,"between the years of 2017 and 2018, what was the variation observed in the total gross amount of unrecognized tax benefits?","subtract(196152, 172945)",23207,,-,-,
+Double_ADBE/2018/page_86.pdf,1,and what was that total gross amount in 2017?,172945,172945,,-,0,Fresh 2017 lookup; Turn 0 identifies total unrecognized tax benefits.
+Double_ADBE/2018/page_86.pdf,2,"what percentage, then, of this amount did that variation represent?","subtract(196152, 172945), divide(#0, 172945)",0.13419,0 1,0 1,-,Divide the variation from Turn 0 by the amount from Turn 1.
+Double_ADBE/2018/page_86.pdf,3,"and concerning the valuation allowance in that last year, what was its change in the fiscal period?",80.9,80.9,,-,0,"Fresh valuation-allowance lookup; Turn 0 supplies the 2017-2018 period, with last year interpreted as 2018."
+Double_ADBE/2018/page_86.pdf,4,what percent of this change was due to settlements with taxing authorities?,"divide(0, 80.9)",0,3,-,3,Follow the guide's numeric-change test: zero divided by any nonzero wrong denominator remains zero. Turn 3 identifies this change. Review required: structural operand use would instead select value parent 3; a zero denominator is undefined.
+Single_TROW/2010/page_22.pdf-1,0,what was the change in capital gain distributions from 2008 to 2009?,"subtract(2.9, 5.6)",-2.7,,-,-,
+Single_TROW/2010/page_22.pdf-1,1,and what were those capital gain distributions in 2008?,5.6,5.6,,-,-,Fully stated 2008 capital-gain distribution lookup; those adds no missing subject.
+Single_TROW/2010/page_22.pdf-1,2,"how much, then, does that change represent in relation to these 2008 distributions, in percentage?","subtract(2.9, 5.6), divide(#0, 5.6)",-0.48214,0 1,0 1,-,Use the earlier change and the 2008 distribution answer; the original change discrepancy is flagged separately.
+Single_TSCO/2017/page_31.pdf-1,0,what is the price of tractor supply company in 2013?,174.14,174.14,,-,-,
+Single_TSCO/2017/page_31.pdf-1,1,what is the price in 2012?,100,100,,-,0,Fresh 2012 lookup; Turn 0 names Tractor Supply.
+Single_TSCO/2017/page_31.pdf-1,2,what is the net change?,"subtract(174.14, 100.00)",74.14,0 1,0 1,-,Subtract the supplied 2012 price from the 2013 price.
+Single_TSCO/2017/page_31.pdf-1,3,what is that change over 100?,"subtract(174.14, 100.00), divide(#0, 100.00)",0.7414,0 1 2,2,-,Divide Turn 2's change by the explicit literal 100. Turn 1 is not used merely because its answer equals that constant.
+Double_ETR/2011/page_341.pdf,0,what was the total increase in the volume/weather segment from 2009 to 2010?,"multiply(18.9, const_1000000)",18900000,,-,-,
+Double_ETR/2011/page_341.pdf,1,and what is the average of this increase per gwh increased in the billed electricity usage?,"multiply(18.9, const_1000000), divide(#0, 1046)",18068.83365,0,0,-,Divide Turn 0's dollar increase by the report's 1046 GWh increase.
+Double_ETR/2011/page_341.pdf,2,"in that same period, what was the total change in the net revenue?","add(18.9, -0.3)",18.6,,-,0,New net-revenue change calculation from the report; Turn 0 supplies the 2009-2010 interval. The volume/weather input shared with Turn 0 does not make its answer a parent.
+Double_ETR/2011/page_341.pdf,3,and what is this change as a percentage of that net revenue in 2009?,"add(18.9, -0.3), add(#0, 536.7)",555.3,2,2,-,The wording asks to divide Turn 2's change by report revenue in 2009. The supplied program adds instead and its answer is not a percentage; review required.
+Single_AMT/2008/page_32.pdf-3,0,"what was the highest price of the company's share price for the quarter ended march 31, 2008?",42.72,42.72,,-,-,
+Single_AMT/2008/page_32.pdf-3,1,what was the lowest price?,32.1,32.1,,-,0,Fresh low-price lookup; Turn 0 supplies the quarter and year.
+Single_AMT/2008/page_32.pdf-3,2,what is the net difference?,"subtract(42.72, 32.10)",10.62,0 1,0 1,-,Subtract the supplied high and low prices.
+Single_AMT/2008/page_32.pdf-3,3,what was the low price?,32.1,32.1,1,-,0,Fresh repeat low-price lookup; Turn 0 supplies the quarter and year.
+Single_AMT/2008/page_32.pdf-3,4,what is the net difference over the low price?,"subtract(42.72, 32.10), divide(#0, 32.10)",0.33084,0 1 2 3,1 2 3,0,Use the difference and both low-price answers; Turn 0 identifies the March 2008 quarter.
+Single_DVN/2014/page_85.pdf-1,0,what is 45 times 4?,"multiply(45, const_4)",180,,-,-,
+Single_DVN/2014/page_85.pdf-1,1,what is that plus the amortization cost in 2019?,"multiply(45, const_4), add(#0, 44)",224,0,0,-,Add the report's 2019 amortization to Turn 0's answer.
+Single_DVN/2014/page_85.pdf-1,2,what is the total cost divided by 5?,"multiply(45, const_4), add(#0, 44), divide(#1, const_5)",44.8,0 1,1,-,Divide Turn 1's total by the explicitly specified five.
+Double_C/2017/page_328.pdf,0,what was the fluctuation in the total return of citi common stock for the five year period ended 2017?,"subtract(193.5, const_100)",93.5,,-,-,
+Double_C/2017/page_328.pdf,1,and what is this fluctuation as a percentage of that return in 2012?,"subtract(193.5, const_100), divide(#0, const_100)",0.935,0,0,-,Use Turn 0's Citi fluctuation and newly read the 2012 base of 100.
+Double_C/2017/page_328.pdf,2,"in that same period, what was that fluctuation for the s&p 500?","subtract(193.5, const_100), subtract(208.1, const_100)",108.1,0,-,0,New S&P calculation from report values; Turn 0 supplies the five-year interval and absolute-fluctuation comparison.
+Double_C/2017/page_328.pdf,3,how much did this s&p 500 fluctuation represent in relation to that citi one?,"subtract(193.5, const_100), subtract(208.1, const_100), divide(#1, #0)",1.15615,0 2,0 2,-,Divide the S&P fluctuation from Turn 2 by the Citi fluctuation from Turn 0; Turn 1's percentage is not an input.

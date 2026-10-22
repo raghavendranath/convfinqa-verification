@@ -1,0 +1,55 @@
+# Main study configuration. Frozen before the test run; see PREREGISTRATION.md.
+# Model IDs are OpenRouter IDs. CONFIRM each on https://openrouter.ai/models before running,
+# and replace any that are unavailable. Aim for 4-6 families and a range of sizes.
+split: dev                 # ConvFinQA dev (the test answers are private)
+min_turns: 3               # a cascade needs at least one later turn after a middle turn
+sample: null               # null = all eligible conversations
+seed: 0
+workers: 8
+max_tokens: 8192           # raised from 4,096 on 7 Oct 2026; see CHANGELOG.md R13
+repeat_seed: 1             # `clean_repeat` asks the clean questions again: run-to-run noise floor (CHANGELOG.md R15)
+out: results/main
+cache: cache/replies.sqlite
+
+models:
+  - qwen/qwen3-14b                     # small, open; replaces qwen3-8b (deprecated 9 Oct 2026; CHANGELOG.md R29)
+  - qwen/qwen3-32b                     # medium, open (same family: size effect)
+  - meta-llama/llama-4-maverick        # open, different family
+  - mistralai/mistral-large-2512       # open, different family
+  - deepseek/deepseek-chat-v3-0324     # open, large
+  # - <one frontier model>             # add one closed frontier model for the upper bound
+
+# Optional: pin one host per model so results do not depend on provider routing.
+# Chosen 7 Oct 2026 from scripts/endpoints.py: cheapest host that supports `seed` (and `reasoning` for Qwen3).
+# mistral-large-2512 has two "Mistral" endpoints at different prices; the name pins the host, not the endpoint.
+providers:
+  qwen/qwen3-14b: DeepInfra                 # same host and fp8 as qwen3-32b (R29)
+  qwen/qwen3-32b: DeepInfra
+  meta-llama/llama-4-maverick: Novita
+  mistralai/mistral-large-2512: Mistral
+  deepseek/deepseek-chat-v3-0324: GMICloud  # SiliconFlow is cheaper but ignores seed
+
+# Extra request fields per model, e.g. OpenRouter reasoning settings. Part of the cache key.
+# Qwen3 thinking cap requested; DeepInfra does not enforce it (CHANGELOG.md R10, R13), so max_tokens is the real limit.
+request_extra:
+  qwen/qwen3-14b: {reasoning: {max_tokens: 2048}}
+  qwen/qwen3-32b: {reasoning: {max_tokens: 2048}}
+
+error_types: [scale, sign, percent, period, line_item, digits]
+types_per_turn: 2          # error types sampled per injected turn (deterministic, seeded)
+
+# Breakers are run on the answers of `answerer`; `checker` does the checking.
+breakers:
+  - {name: self_qwen32b,    kind: self,    answerer: qwen/qwen3-32b, checker: qwen/qwen3-32b}
+  - {name: cross_qwen32b_by_llama, kind: cross, answerer: qwen/qwen3-32b, checker: meta-llama/llama-4-maverick}
+  - {name: program_qwen32b, kind: program, answerer: qwen/qwen3-32b, checker: qwen/qwen3-32b}
+
+# Exploratory breakers, added after freezing, PREREGISTRATION change 2, CHANGELOG R31. Not tests of H4.
+# `cascade run breakers` runs `breakers` + `exploratory_breakers` (finished rows are skipped by key).
+exploratory_breakers:
+  - {name: self_deepseek,           kind: self,    answerer: deepseek/deepseek-chat-v3-0324, checker: deepseek/deepseek-chat-v3-0324}
+  - {name: cross_deepseek_by_llama, kind: cross,   answerer: deepseek/deepseek-chat-v3-0324, checker: meta-llama/llama-4-maverick}
+  - {name: program_deepseek,        kind: program, answerer: deepseek/deepseek-chat-v3-0324, checker: deepseek/deepseek-chat-v3-0324}
+
+# Post-hoc analyses (CHANGELOG R30), report only; no model calls.
+posthoc: {size_pair: [qwen/qwen3-14b, qwen/qwen3-32b]}

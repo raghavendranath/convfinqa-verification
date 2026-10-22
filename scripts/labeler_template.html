@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Graph Audit Labeler</title>
+<style>
+:root {
+  --bg: #f7f7f5; --panel: #ffffff; --text: #1d1d1b; --muted: #6b6b66; --line: #e2e1dc;
+  --accent: #2f5bd3; --accent-soft: #e6ecfb; --ref: #8a4fd1; --ref-soft: #f1e8fb;
+  --ok: #1f8a4c; --ok-soft: #e3f4ea; --warn: #b26b00;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161615; --panel: #1f1f1e; --text: #ecebe6; --muted: #9c9b95; --line: #34332f;
+    --accent: #7d9cf0; --accent-soft: #24304d; --ref: #b88ae8; --ref-soft: #33264a;
+    --ok: #5cc48a; --ok-soft: #1d3527; --warn: #e0a340;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+header { position: sticky; top: 0; z-index: 2; background: var(--panel); border-bottom: 1px solid var(--line); padding: 10px 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+header h1 { font-size: 16px; margin: 0; }
+.bar { flex: 1; min-width: 140px; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+.bar > div { height: 100%; background: var(--ok); width: 0; }
+button, label.btn { font: inherit; border: 1px solid var(--line); background: var(--panel); color: var(--text); padding: 6px 12px; border-radius: 8px; cursor: pointer; }
+button:hover, label.btn:hover { border-color: var(--muted); }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.layout { display: grid; grid-template-columns: 260px 1fr; gap: 16px; padding: 16px; max-width: 1200px; margin: 0 auto; }
+nav { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px; max-height: calc(100vh - 90px); overflow: auto; position: sticky; top: 70px; }
+nav a { display: flex; justify-content: space-between; gap: 8px; padding: 6px 8px; border-radius: 6px; color: var(--text); text-decoration: none; font-size: 13px; }
+nav a.cur { background: var(--accent-soft); }
+nav a .st { color: var(--muted); white-space: nowrap; }
+nav a.done .st { color: var(--ok); }
+main { min-width: 0; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; }
+.card.done { border-color: var(--ok); }
+.help summary { cursor: pointer; font-weight: 600; }
+.help li { margin: 4px 0; }
+.convhead { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+.convhead h2 { font-size: 17px; margin: 0; word-break: break-all; }
+.turnno { font-weight: 700; color: var(--muted); margin-right: 6px; }
+.q { font-size: 16px; }
+.ans { color: var(--muted); font-size: 13px; margin-top: 2px; }
+.prog { font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: var(--muted); margin-top: 4px; display: none; word-break: break-all; }
+.showprog .prog { display: block; }
+.row { margin-top: 10px; }
+.row .lab { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+.row .lab small { font-weight: 400; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; font-size: 13px; cursor: pointer; background: var(--panel); color: var(--text); }
+.chip .v { color: var(--muted); margin-left: 4px; }
+.val .chip.on { background: var(--accent-soft); border-color: var(--accent); }
+.ref .chip.on { background: var(--ref-soft); border-color: var(--ref); }
+.chip.none.on { background: var(--ok-soft); border-color: var(--ok); }
+.chip:disabled { opacity: .35; cursor: not-allowed; }
+.note { width: 100%; margin-top: 8px; font: inherit; font-size: 13px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--text); }
+.auto { color: var(--muted); font-size: 13px; margin-top: 6px; }
+.report { font-size: 13px; }
+.report summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+.report .txt { color: var(--muted); margin: 8px 0; white-space: pre-wrap; }
+.report .txt b { color: var(--text); }
+.tblwrap { overflow-x: auto; margin: 8px 0; }
+.report table { border-collapse: collapse; font-size: 13px; }
+.report td { border: 1px solid var(--line); padding: 3px 8px; max-width: 240px; vertical-align: top; }
+.report td:not(:first-child) { white-space: nowrap; }
+.report tr:first-child td { white-space: normal; min-width: 90px; }
+.report tr:first-child td { font-weight: 600; background: var(--bg); }
+.report td:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+.navbtns { display: flex; justify-content: space-between; margin-top: 8px; gap: 8px; }
+.msg { font-size: 13px; color: var(--warn); }
+@media (max-width: 760px) { .layout { grid-template-columns: 1fr; } nav { position: static; max-height: 200px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Graph audit</h1>
+  <span id="count">0 / 0 turns</span>
+  <div class="bar"><div id="fill"></div></div>
+  <label class="btn"><input type="checkbox" id="showprog"> show programs</label>
+  <label class="btn">Load CSV<input type="file" id="load" accept=".csv" hidden></label>
+  <button class="primary" id="dl">Download CSV</button>
+</header>
+<div class="layout">
+  <nav id="nav"></nav>
+  <main>
+    <details class="card help" id="help" open>
+      <summary>How to label (click to hide)</summary>
+      <ul>
+        <li>Read the conversation top to bottom, like a person would.</li>
+        <li><b>Uses the number from</b>: which earlier answers does this question <i>compute with</i>? If that
+          earlier number were wrong, this answer would be wrong too. Click those turns, or <b>None</b>.</li>
+        <li><b>Wording points back to</b>: does the question say "it", "this", "that", "the same", or leave out
+          the subject, so you need an earlier question to know what it means, <i>without</i> using its number?
+          Click the turn(s) you would need to read to understand the question (not a turn that merely asked
+          the same thing before), or <b>None</b>. Test: could you answer it correctly from the question
+          and the report alone, without reading the earlier question? If yes, <b>None</b> (a conversational
+          "what about..." on a fully stated question is None).</li>
+        <li><b>The test for "uses":</b> if <i>only</i> that earlier turn's answer were wrong (every other earlier
+          answer shown correctly), would this answer change? Only then click it. This is what the experiment
+          does: it corrupts one answer at a time. A turn that matters only through another turn's result is
+          not clicked (GS turn 4 uses turn 2's change, not turn 0). A number that was an <i>ingredient</i> in an earlier turn's calculation and is
+          read again from the report does not count (e.g. 448,859 is an input to turn 0's total, but turn 1
+          reads it from the table, so turn 1 <b>uses</b> = None).</li>
+        <li>Asking for a number again ("what was the 2016 value?") is a fresh lookup: <b>uses</b> = None.</li>
+        <li>If the same number was answered twice before, click both turns.</li>
+        <li><b>Reading programs:</b> every program is written from scratch and never mentions earlier turns,
+          even when the question uses them (turn 2 recomputes the total instead of "taking turn 0").
+          So a program not mentioning a turn proves nothing. <code>#0</code>, <code>#1</code> mean "step 0, 1 of
+          <i>this</i> program", not turn 0, 1. Decide from the question first, then use the program to check numbers.</li>
+        <li>If a turn is already clicked under <b>uses</b>, it is greyed out under <b>points back to</b>; click
+          None there unless the wording points to a different turn.</li>
+        <li>Only count turns the question really needs. The programs sometimes repeat earlier steps that the question does not use.</li>
+        <li>If an earlier number is used only through another turn's result, click just that turn.</li>
+        <li>Unsure? Pick your best reading and write why in the note.</li>
+        <li>Your work is saved in this browser as you go. Press <b>Download CSV</b> when you finish (or any time, as a backup).</li>
+      </ul>
+    </details>
+    <div id="conv"></div>
+  </main>
+</div>
+<script>
+const DATA = __DATA__;
+const VCOL = "value_parents (fill in)", RCOL = "reference_parents (fill in)", KEY = "convfin-graph-audit-v1";
+const rows = DATA.rows;
+const convs = [];
+rows.forEach((r, i) => {
+  let c = convs.find(c => c.id === r.conv);
+  if (!c) { c = { id: r.conv, idx: [] }; convs.push(c); }
+  c.idx.push(i);
+});
+// label[i] = {v: null | "-" | [turns], r: null | "-" | [turns], note: ""}
+let label = rows.map(r => ({ v: parse(r[VCOL]), r: parse(r[RCOL]), note: r.note || "" }));
+function parse(s) { s = (s || "").trim(); if (!s) return null; if (s === "-") return "-"; return s.split(/[\s,]+/).map(Number).sort((a, b) => a - b); }
+function fmt(x) { return x === null ? "" : x === "-" ? "-" : x.join(" "); }
+try { const saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved && saved.length === rows.length) label = saved; } catch (e) {}
+rows.forEach((r, i) => { if (+r.turn === 0) { label[i].v = "-"; label[i].r = "-"; } });
+function save() { try { localStorage.setItem(KEY, JSON.stringify(label)); } catch (e) {} }
+const done = i => label[i].v !== null && label[i].r !== null;
+let cur = 0;
+
+function render() {
+  const n = rows.filter((_, i) => done(i)).length;
+  document.getElementById("count").textContent = `${n} / ${rows.length} turns`;
+  document.getElementById("fill").style.width = (100 * n / rows.length) + "%";
+  const nav = document.getElementById("nav");
+  nav.innerHTML = "";
+  convs.forEach((c, ci) => {
+    const d = c.idx.filter(done).length;
+    const a = document.createElement("a");
+    a.href = "#"; a.className = (ci === cur ? "cur " : "") + (d === c.idx.length ? "done" : "");
+    a.innerHTML = `<span>${ci + 1}. ${esc(c.id.replace(/^(Single_|Double_)/, "").replace(".pdf", ""))}</span><span class="st">${d === c.idx.length ? "done" : d + "/" + c.idx.length}</span>`;
+    a.onclick = e => { e.preventDefault(); cur = ci; render(); window.scrollTo(0, 0); };
+    nav.appendChild(a);
+  });
+  const c = convs[cur], box = document.getElementById("conv");
+  box.innerHTML = `<div class="convhead"><h2>${cur + 1} of ${convs.length}: ${esc(c.id)}</h2></div>`;
+  box.appendChild(reportCard(c.id));
+  c.idx.forEach(i => box.appendChild(turnCard(c, i)));
+  const nb = document.createElement("div"); nb.className = "navbtns";
+  const prev = btn("← Previous conversation", () => { if (cur > 0) { cur--; render(); window.scrollTo(0, 0); } });
+  const next = btn("Next conversation →", () => { if (cur < convs.length - 1) { cur++; render(); window.scrollTo(0, 0); } });
+  prev.disabled = cur === 0; next.disabled = cur === convs.length - 1;
+  nb.append(prev, next); box.appendChild(nb);
+}
+function reportCard(id) {
+  const rep = DATA.reports[id];
+  const d = document.createElement("details"); d.className = "card report"; d.open = true;
+  const table = rep.table.map(r => "<tr>" + r.map(x => `<td>${esc(x)}</td>`).join("") + "</tr>").join("");
+  d.innerHTML = `<summary>The report these questions are about (click to hide)</summary>
+    <div class="tblwrap"><table>${table}</table></div>
+    <details><summary>Text before and after the table</summary>
+      <div class="txt"><b>Before:</b> ${esc(rep.pre || "(none)")}</div>
+      <div class="txt"><b>After:</b> ${esc(rep.post || "(none)")}</div>
+    </details>`;
+  return d;
+}
+function turnCard(c, i) {
+  const r = rows[i], k = +r.turn, L = label[i];
+  const card = document.createElement("div"); card.className = "card" + (done(i) ? " done" : "");
+  card.innerHTML = `<div class="q"><span class="turnno">Turn ${k}</span>${esc(r.question)}</div>
+    <div class="ans">Correct answer: ${esc(num(r.gold))}</div><div class="prog">Program: ${esc(r.program)}</div>`;
+  if (k === 0) { card.insertAdjacentHTML("beforeend", `<div class="auto">First question: nothing earlier to depend on.</div>`); return card; }
+  card.appendChild(chipRow(c, i, "v", "Uses the number from", "which earlier answers does it compute with?"));
+  card.appendChild(chipRow(c, i, "r", "Wording points back to", "it / this / the same, without using the number"));
+  const note = document.createElement("input"); note.className = "note"; note.placeholder = "Note (optional): why, if unsure";
+  note.value = L.note; note.oninput = () => { L.note = note.value; save(); };
+  card.appendChild(note);
+  return card;
+}
+function chipRow(c, i, key, title, hint) {
+  const L = label[i], k = +rows[i].turn;
+  const row = document.createElement("div"); row.className = "row " + (key === "v" ? "val" : "ref");
+  row.innerHTML = `<div class="lab">${title} <small>(${hint})</small></div>`;
+  const chips = document.createElement("div"); chips.className = "chips";
+  const none = document.createElement("button"); none.className = "chip none" + (L[key] === "-" ? " on" : ""); none.textContent = "None";
+  none.onclick = () => { L[key] = L[key] === "-" ? null : "-"; save(); render(); };
+  chips.appendChild(none);
+  for (let j = 0; j < k; j++) {
+    const prevRow = rows[c.idx.find(x => +rows[x].turn === j)];
+    const on = Array.isArray(L[key]) && L[key].includes(j);
+    const b = document.createElement("button"); b.className = "chip" + (on ? " on" : "");
+    b.innerHTML = `Turn ${j}<span class="v">${esc(num(prevRow.gold))}</span>`;
+    b.title = prevRow.question;
+    if (key === "r" && Array.isArray(L.v) && L.v.includes(j)) { b.disabled = true; b.title = "Already counted as using this turn's number"; }
+    b.onclick = () => {
+      let s = Array.isArray(L[key]) ? L[key].slice() : [];
+      s = on ? s.filter(x => x !== j) : s.concat(j).sort((a, b) => a - b);
+      L[key] = s.length ? s : null;
+      if (key === "v" && Array.isArray(L.r)) { L.r = L.r.filter(x => !(L.v || []).includes(x)); if (!L.r.length) L.r = null; }
+      save(); render();
+    };
+    chips.appendChild(b);
+  }
+  row.appendChild(chips);
+  return row;
+}
+function btn(t, f) { const b = document.createElement("button"); b.textContent = t; b.onclick = f; return b; }
+function esc(s) { return String(s).replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch])); }
+function num(s) { const x = Number(s); return Number.isFinite(x) ? (Number.isInteger(x) ? x.toLocaleString("en-US") : String(x)) : s; }
+function csvCell(s) { s = String(s ?? ""); return /[",\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; }
+document.getElementById("dl").onclick = () => {
+  const lines = [DATA.columns.map(csvCell).join(",")];
+  rows.forEach((r, i) => {
+    const out = { ...r, [VCOL]: fmt(label[i].v), [RCOL]: fmt(label[i].r), note: label[i].note };
+    lines.push(DATA.columns.map(col => csvCell(out[col])).join(","));
+  });
+  const blob = new Blob([lines.join("\r\n") + "\r\n"], { type: "text/csv" });
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "graph_audit.csv"; a.click();
+};
+document.getElementById("load").onchange = async e => {
+  const f = e.target.files[0]; if (!f) return;
+  const parsed = parseCSV(await f.text()); const head = parsed[0];
+  const vi = head.indexOf(VCOL), ri = head.indexOf(RCOL), ni = head.indexOf("note"), ci = head.indexOf("conv"), ti = head.indexOf("turn");
+  if (vi < 0 || ri < 0) { alert("This CSV does not have the audit columns."); return; }
+  let n = 0;
+  parsed.slice(1).forEach(p => {
+    const i = rows.findIndex(r => r.conv === p[ci] && r.turn === p[ti]);
+    if (i >= 0) { label[i] = { v: parse(p[vi]), r: parse(p[ri]), note: p[ni] || "" }; n++; }
+  });
+  rows.forEach((r, i) => { if (+r.turn === 0) { label[i].v = "-"; label[i].r = "-"; } });
+  save(); render(); alert(`Loaded ${n} turns.`);
+};
+function parseCSV(t) {
+  const out = []; let row = [], cell = "", q = false;
+  for (let i = 0; i < t.length; i++) {
+    const ch = t[i];
+    if (q) { if (ch === '"') { if (t[i + 1] === '"') { cell += '"'; i++; } else q = false; } else cell += ch; }
+    else if (ch === '"') q = true;
+    else if (ch === ",") { row.push(cell); cell = ""; }
+    else if (ch === "\n" || ch === "\r") { if (ch === "\r" && t[i + 1] === "\n") i++; row.push(cell); cell = ""; if (row.length > 1 || row[0] !== "") out.push(row); row = []; }
+    else cell += ch;
+  }
+  if (cell !== "" || row.length) { row.push(cell); out.push(row); }
+  return out;
+}
+document.getElementById("showprog").onchange = e => document.body.classList.toggle("showprog", e.target.checked);
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+{
+ "config": {
+  "split": "dev",
+  "min_turns": 3,
+  "sample": 20,
+  "seed": 0,
+  "workers": 8,
+  "max_tokens": 8192,
+  "out": "results/change4_dev/pv2-dev1-parserfix",
+  "cache": "cache/replies.sqlite",
+  "models": [
+   "qwen/qwen3-32b",
+   "deepseek/deepseek-chat-v3-0324"
+  ],
+  "providers": {
+   "qwen/qwen3-32b": "DeepInfra",
+   "deepseek/deepseek-chat-v3-0324": "GMICloud"
+  },
+  "request_extra": {
+   "qwen/qwen3-32b": {
+    "reasoning": {
+     "max_tokens": 2048
+    }
+   }
+  },
+  "error_types": [
+   "scale",
+   "sign",
+   "percent",
+   "period",
+   "line_item",
+   "digits"
+  ],
+  "types_per_turn": 2,
+  "breakers": [
+   {
+    "name": "program_qwen32b",
+    "kind": "program",
+    "answerer": "qwen/qwen3-32b",
+    "checker": "qwen/qwen3-32b"
+   },
+   {
+    "name": "program_v2_qwen32b",
+    "kind": "program_v2",
+    "answerer": "qwen/qwen3-32b",
+    "checker": "qwen/qwen3-32b"
+   },
+   {
+    "name": "program_deepseek",
+    "kind": "program",
+    "answerer": "deepseek/deepseek-chat-v3-0324",
+    "checker": "deepseek/deepseek-chat-v3-0324"
+   },
+   {
+    "name": "program_v2_deepseek",
+    "kind": "program_v2",
+    "answerer": "deepseek/deepseek-chat-v3-0324",
+    "checker": "deepseek/deepseek-chat-v3-0324"
+   }
+  ],
+  "change4": {
+   "margin": 0.02,
+   "pairs": [
+    {
+     "answerer": "qwen/qwen3-32b",
+     "frozen": "program_qwen32b",
+     "revised": "program_v2_qwen32b"
+    },
+    {
+     "answerer": "deepseek/deepseek-chat-v3-0324",
+     "frozen": "program_deepseek",
+     "revised": "program_v2_deepseek"
+    }
+   ]
+  }
+ },
+ "n_conversations": 20,
+ "ids": [
+  "Double_AAP/2011/page_28.pdf",
+  "Double_AMAT/2013/page_18.pdf",
+  "Double_AMT/2012/page_125.pdf",
+  "Double_IP/2006/page_32.pdf",
+  "Double_SYY/2019/page_9.pdf",
+  "Double_TROW/2010/page_22.pdf",
+  "Double_UNP/2008/page_77.pdf",
+  "Double_V/2008/page_17.pdf",
+  "Single_BLL/2007/page_47.pdf-3",
+  "Single_EW/2016/page_94.pdf-2",
+  "Single_IPG/2008/page_21.pdf-1",
+  "Single_LKQ/2010/page_84.pdf-4",
+  "Single_LMT/2006/page_90.pdf-2",
+  "Single_MRO/2009/page_56.pdf-1",
+  "Single_PM/2018/page_24.pdf-2",
+  "Single_RSG/2017/page_142.pdf-2",
+  "Single_SNPS/2006/page_69.pdf-2",
+  "Single_UNP/2006/page_37.pdf-4",
+  "Single_UPS/2006/page_32.pdf-1",
+  "Single_ZBH/2003/page_58.pdf-1"
+ ]
+}

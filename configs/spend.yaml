@@ -1,0 +1,14 @@
+# OpenRouter spend for the study (CHANGELOG R47). `uv run cascade spend --config configs/spend.yaml` saves the
+# account's activity rows for these models (needs a management key in OPENROUTER_MANAGEMENT_KEY); then
+# `uv run cascade report --config configs/spend.yaml` writes results/spend/TABLES.md. The account also holds other
+# work: only these models are kept. The activity endpoint covers the last 30 completed UTC days.
+out: results/spend
+models:                                # every model the study called (configs/*.yaml)
+  - qwen/qwen3-14b
+  - qwen/qwen3-32b
+  - meta-llama/llama-4-maverick
+  - mistralai/mistral-large-2512
+  - deepseek/deepseek-chat-v3-0324
+spend:
+  from: 2026-10-06                     # first smoke run (memory.md)
+  to: 2026-10-19                       # last change 4 breaker calls

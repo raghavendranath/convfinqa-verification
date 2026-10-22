@@ -1,0 +1,9 @@
+# Answer-parser sensitivity (CHANGELOG R53, PREREGISTRATION change 7). Report only; no model calls.
+# `cascade report --config configs/parser_sensitivity.yaml` re-reads every stored answer reply with the corrected
+# parser (scientific notation read whole), writes corrected copies of each config's result rows under `out`, runs the
+# report on each copy, and lists every summary.json number that changes. The frozen results are not touched.
+out: results/parser_sensitivity
+parser_sensitivity:
+  - {config: configs/main.yaml}
+  - {config: configs/exploratory_guard.yaml}
+  - {config: configs/change4.yaml}

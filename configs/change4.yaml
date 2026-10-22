@@ -1,0 +1,32 @@
+# PREREGISTRATION change 4 (CHANGELOG R38): FINAL evaluation of program_v2 on the locked train sample.
+# Run only after the prompt is frozen in PREREGISTRATION change 4 Part B. Stages: free, then breakers.
+split: train
+min_turns: 3
+ids_file: configs/change4_sample.txt
+ids_sha256: 597f495dc8454de850498c1de16efe1ca08cf481832c576cf0f7d84ed38177dd
+seed: 0
+workers: 8
+max_tokens: 8192
+out: results/change4
+program_v2_version: pv2-dev3   # frozen in PREREGISTRATION change 4 Part B; the run stops if the prompt differs
+cache: cache/replies.sqlite
+models:
+  - qwen/qwen3-32b
+  - deepseek/deepseek-chat-v3-0324
+providers:
+  qwen/qwen3-32b: DeepInfra
+  deepseek/deepseek-chat-v3-0324: GMICloud
+request_extra:
+  qwen/qwen3-32b: {reasoning: {max_tokens: 2048}}
+error_types: [scale, sign, percent, period, line_item, digits]
+types_per_turn: 2
+breakers:
+  - {name: program_qwen32b,     kind: program,    answerer: qwen/qwen3-32b, checker: qwen/qwen3-32b}
+  - {name: program_v2_qwen32b,  kind: program_v2, answerer: qwen/qwen3-32b, checker: qwen/qwen3-32b}
+  - {name: program_deepseek,    kind: program,    answerer: deepseek/deepseek-chat-v3-0324, checker: deepseek/deepseek-chat-v3-0324}
+  - {name: program_v2_deepseek, kind: program_v2, answerer: deepseek/deepseek-chat-v3-0324, checker: deepseek/deepseek-chat-v3-0324}
+change4:
+  margin: 0.02
+  pairs:
+    - {answerer: qwen/qwen3-32b, frozen: program_qwen32b, revised: program_v2_qwen32b}
+    - {answerer: deepseek/deepseek-chat-v3-0324, frozen: program_deepseek, revised: program_v2_deepseek}

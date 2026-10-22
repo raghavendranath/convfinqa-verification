@@ -1,0 +1,27 @@
+[
+ {"id": "Single_TEST/2019/page_1.pdf-1",
+  "pre_text": ["the following table shows net revenue ."],
+  "post_text": ["amounts in thousands ."],
+  "table": [["", "2019", "2018", "2017"], ["net revenue", "$ 206588", "$ 181001", "$ 170000"], ["operating income", "50000", "42000", "(3000)"]],
+  "annotation": {
+    "dialogue_break": ["what was net revenue in 2019?", "and in 2018?", "what was the change?", "what percentage change does this represent?"],
+    "turn_program": ["206588", "181001", "subtract(206588, 181001)", "subtract(206588, 181001), divide(#0, 181001)"],
+    "exe_ans_list": [206588, 181001, 25587, 0.14136]
+  }},
+ {"id": "Single_TEST/2020/page_2.pdf-3",
+  "pre_text": ["operating data ."], "post_text": [],
+  "table": [["", "2020", "2019"], ["shares", "10", "12"], ["price", "5.5", "4.0"]],
+  "annotation": {
+    "dialogue_break": ["what was the max of shares?", "was price in 2020 greater than in 2019?", "what is the total of price?"],
+    "turn_program": ["table_max(shares, none)", "greater(5.5, 4.0)", "table_sum(price, none)"],
+    "exe_ans_list": [12, "yes", 9.5]
+  }},
+ {"id": "Single_TEST/2021/page_9.pdf-2",
+  "pre_text": ["broken example ."], "post_text": [],
+  "table": [["", "2021"], ["cash", "100"]],
+  "annotation": {
+    "dialogue_break": ["what was cash?", "what is double that?", "and half of that?"],
+    "turn_program": ["100", "multiply(100, const_2)", "divide(200, const_2)"],
+    "exe_ans_list": [100, 200, 999]
+  }}
+]

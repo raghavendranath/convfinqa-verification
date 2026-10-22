@@ -1,0 +1,529 @@
+{
+ "models": {
+  "qwen/qwen3-32b": {
+   "clean_accuracy": 0.8306836248012719,
+   "cascade": [
+    {
+     "type": "all",
+     "turns": "depends",
+     "extra_error": 0.0488061797752809,
+     "ci_low": 0.02977517341018883,
+     "ci_high": 0.06941832432237993,
+     "n": 2848
+    },
+    {
+     "type": "all",
+     "turns": "independent",
+     "extra_error": 0.02351212343864805,
+     "ci_low": -0.0036643704072504336,
+     "ci_high": 0.04959594058432371,
+     "n": 1361
+    },
+    {
+     "type": "digits",
+     "turns": "depends",
+     "extra_error": 0.07297830374753451,
+     "ci_low": 0.03501775527936232,
+     "ci_high": 0.11136030179745547,
+     "n": 507
+    },
+    {
+     "type": "digits",
+     "turns": "independent",
+     "extra_error": -0.0036900369003690036,
+     "ci_low": -0.03704047914085089,
+     "ci_high": 0.03297006302521007,
+     "n": 271
+    },
+    {
+     "type": "line_item",
+     "turns": "depends",
+     "extra_error": 0.1016949152542373,
+     "ci_low": 0.05022260273972602,
+     "ci_high": 0.15748474852805558,
+     "n": 236
+    },
+    {
+     "type": "line_item",
+     "turns": "independent",
+     "extra_error": -0.011235955056179775,
+     "ci_low": -0.04597701149425287,
+     "ci_high": 0.02531645569620253,
+     "n": 89
+    },
+    {
+     "type": "percent",
+     "turns": "depends",
+     "extra_error": 0.031914893617021274,
+     "ci_low": 0.00788367569211749,
+     "ci_high": 0.056196841358408585,
+     "n": 658
+    },
+    {
+     "type": "percent",
+     "turns": "independent",
+     "extra_error": 0.03666666666666667,
+     "ci_low": 0.0,
+     "ci_high": 0.07213114754098361,
+     "n": 300
+    },
+    {
+     "type": "period",
+     "turns": "depends",
+     "extra_error": 0.055248618784530384,
+     "ci_low": 0.0,
+     "ci_high": 0.11640617392151131,
+     "n": 181
+    },
+    {
+     "type": "period",
+     "turns": "independent",
+     "extra_error": -0.03278688524590164,
+     "ci_low": -0.10258620689655172,
+     "ci_high": 0.0,
+     "n": 61
+    },
+    {
+     "type": "scale",
+     "turns": "depends",
+     "extra_error": 0.05271828665568369,
+     "ci_low": 0.025192972539534394,
+     "ci_high": 0.08191990647168389,
+     "n": 607
+    },
+    {
+     "type": "scale",
+     "turns": "independent",
+     "extra_error": 0.07643312101910828,
+     "ci_low": 0.03313004269329571,
+     "ci_high": 0.11986328378203188,
+     "n": 314
+    },
+    {
+     "type": "sign",
+     "turns": "depends",
+     "extra_error": 0.02276176024279211,
+     "ci_low": -0.0060700333470165265,
+     "ci_high": 0.049681480738362746,
+     "n": 659
+    },
+    {
+     "type": "sign",
+     "turns": "independent",
+     "extra_error": 0.003067484662576687,
+     "ci_low": -0.024602369083714475,
+     "ci_high": 0.03076923076923077,
+     "n": 326
+    }
+   ],
+   "transmission_fit": {
+    "a_transmission": 0.01,
+    "s_spillover": 0.0,
+    "heldout_logloss": 0.3432149998393537,
+    "heldout_brier": 0.09893897622153418,
+    "heldout_n": 2296,
+    "graph_blind_c": 0.015,
+    "graph_blind_heldout_brier": 0.09885713481293668,
+    "brier_diff": 8.184140859749701e-05,
+    "brier_diff_ci_low": -0.0001700009062066989,
+    "brier_diff_ci_high": 0.00035313324442715093,
+    "calibration_by_paths": [
+     {
+      "paths": 0,
+      "n": 758,
+      "predicted": 0.16807098218411173,
+      "observed": 0.20052770448548812
+     },
+     {
+      "paths": 1,
+      "n": 1020,
+      "predicted": 0.17530188186095144,
+      "observed": 0.22450980392156863
+     },
+     {
+      "paths": 2,
+      "n": 388,
+      "predicted": 0.20544113108357903,
+      "observed": 0.25
+     },
+     {
+      "paths": 3,
+      "n": 58,
+      "predicted": 0.2614187623429529,
+      "observed": 0.29310344827586204
+     },
+     {
+      "paths": 4,
+      "n": 60,
+      "predicted": 0.21580617416779932,
+      "observed": 0.21666666666666667
+     },
+     {
+      "paths": 8,
+      "n": 12,
+      "predicted": 0.3851182440031411,
+      "observed": 0.4166666666666667
+     }
+    ]
+   },
+   "copied_wrong_rate_dependent": 0.011235955056179775,
+   "reply_health": {
+    "clean": {
+     "n": 1258,
+     "unparsed": 14,
+     "truncated": 14
+    },
+    "inject": {
+     "n": 4209,
+     "unparsed": 80,
+     "truncated": 80
+    },
+    "free": {
+     "n": 1258,
+     "unparsed": 11,
+     "truncated": 11
+    }
+   },
+   "noise_floor": null,
+   "mechanisms": [
+    {
+     "turns": "depends",
+     "newly_wrong": 230,
+     "copied": 7,
+     "convention": 50,
+     "loop": 20,
+     "no_answer": 0,
+     "other": 153
+    },
+    {
+     "turns": "independent",
+     "newly_wrong": 74,
+     "copied": 1,
+     "convention": 32,
+     "loop": 23,
+     "no_answer": 0,
+     "other": 18
+    },
+    {
+     "turns": "all",
+     "newly_wrong": 304,
+     "copied": 8,
+     "convention": 82,
+     "loop": 43,
+     "no_answer": 0,
+     "other": 171
+    }
+   ]
+  },
+  "deepseek/deepseek-chat-v3-0324": {
+   "clean_accuracy": 0.863275039745628,
+   "cascade": [
+    {
+     "type": "all",
+     "turns": "depends",
+     "extra_error": 0.2478932584269663,
+     "ci_low": 0.2237309954553577,
+     "ci_high": 0.2729889464776814,
+     "n": 2848
+    },
+    {
+     "type": "all",
+     "turns": "independent",
+     "extra_error": 0.1535635562086701,
+     "ci_low": 0.12491176027608066,
+     "ci_high": 0.18204209087698284,
+     "n": 1361
+    },
+    {
+     "type": "digits",
+     "turns": "depends",
+     "extra_error": 0.378698224852071,
+     "ci_low": 0.3333182640144665,
+     "ci_high": 0.42827579071185845,
+     "n": 507
+    },
+    {
+     "type": "digits",
+     "turns": "independent",
+     "extra_error": 0.01845018450184502,
+     "ci_low": -0.00760528836385801,
+     "ci_high": 0.04615511551155115,
+     "n": 271
+    },
+    {
+     "type": "line_item",
+     "turns": "depends",
+     "extra_error": 0.2754237288135593,
+     "ci_low": 0.20919877599450445,
+     "ci_high": 0.3403454302074812,
+     "n": 236
+    },
+    {
+     "type": "line_item",
+     "turns": "independent",
+     "extra_error": 0.15730337078651685,
+     "ci_low": 0.07777508090614887,
+     "ci_high": 0.25,
+     "n": 89
+    },
+    {
+     "type": "percent",
+     "turns": "depends",
+     "extra_error": 0.17933130699088146,
+     "ci_low": 0.14442457395329267,
+     "ci_high": 0.21513444984428254,
+     "n": 658
+    },
+    {
+     "type": "percent",
+     "turns": "independent",
+     "extra_error": 0.18,
+     "ci_low": 0.1267582159624413,
+     "ci_high": 0.23364789416191284,
+     "n": 300
+    },
+    {
+     "type": "period",
+     "turns": "depends",
+     "extra_error": 0.2983425414364641,
+     "ci_low": 0.22032789067352915,
+     "ci_high": 0.3776855407276846,
+     "n": 181
+    },
+    {
+     "type": "period",
+     "turns": "independent",
+     "extra_error": 0.21311475409836064,
+     "ci_low": 0.125,
+     "ci_high": 0.3333333333333333,
+     "n": 61
+    },
+    {
+     "type": "scale",
+     "turns": "depends",
+     "extra_error": 0.171334431630972,
+     "ci_low": 0.1354835834627106,
+     "ci_high": 0.2074109014675052,
+     "n": 607
+    },
+    {
+     "type": "scale",
+     "turns": "independent",
+     "extra_error": 0.2515923566878981,
+     "ci_low": 0.20689389101745423,
+     "ci_high": 0.29593083161603395,
+     "n": 314
+    },
+    {
+     "type": "sign",
+     "turns": "depends",
+     "extra_error": 0.26251896813353565,
+     "ci_low": 0.22638605116046628,
+     "ci_high": 0.30058326885439896,
+     "n": 659
+    },
+    {
+     "type": "sign",
+     "turns": "independent",
+     "extra_error": 0.13496932515337423,
+     "ci_low": 0.08856534474988734,
+     "ci_high": 0.180921835839599,
+     "n": 326
+    }
+   ],
+   "transmission_fit": {
+    "a_transmission": 0.195,
+    "s_spillover": 0.165,
+    "heldout_logloss": 0.5915330321869068,
+    "heldout_brier": 0.2004407776159485,
+    "heldout_n": 2296,
+    "graph_blind_c": 0.26,
+    "graph_blind_heldout_brier": 0.18393798646171186,
+    "brier_diff": 0.016502791154236685,
+    "brier_diff_ci_low": 0.011002371243940061,
+    "brier_diff_ci_high": 0.02255534075411618,
+    "calibration_by_paths": [
+     {
+      "paths": 0,
+      "n": 758,
+      "predicted": 0.26327065750654816,
+      "observed": 0.2678100263852243
+     },
+     {
+      "paths": 1,
+      "n": 1020,
+      "predicted": 0.29874411405963336,
+      "observed": 0.44607843137254904
+     },
+     {
+      "paths": 2,
+      "n": 388,
+      "predicted": 0.43730982190492623,
+      "observed": 0.25773195876288657
+     },
+     {
+      "paths": 3,
+      "n": 58,
+      "predicted": 0.5696588414894911,
+      "observed": 0.25862068965517243
+     },
+     {
+      "paths": 4,
+      "n": 60,
+      "predicted": 0.6378880880653479,
+      "observed": 0.2
+     },
+     {
+      "paths": 8,
+      "n": 12,
+      "predicted": 0.8626315754595488,
+      "observed": 0.3333333333333333
+     }
+    ]
+   },
+   "copied_wrong_rate_dependent": 0.0175561797752809,
+   "reply_health": {
+    "clean": {
+     "n": 1258,
+     "unparsed": 1,
+     "truncated": 0
+    },
+    "inject": {
+     "n": 4209,
+     "unparsed": 0,
+     "truncated": 0
+    },
+    "free": {
+     "n": 1258,
+     "unparsed": 4,
+     "truncated": 0
+    }
+   },
+   "noise_floor": null,
+   "mechanisms": [
+    {
+     "turns": "depends",
+     "newly_wrong": 750,
+     "copied": 25,
+     "convention": 165,
+     "loop": 0,
+     "no_answer": 0,
+     "other": 560
+    },
+    {
+     "turns": "independent",
+     "newly_wrong": 232,
+     "copied": 5,
+     "convention": 127,
+     "loop": 0,
+     "no_answer": 0,
+     "other": 100
+    },
+    {
+     "turns": "all",
+     "newly_wrong": 982,
+     "copied": 30,
+     "convention": 292,
+     "loop": 0,
+     "no_answer": 0,
+     "other": 660
+    }
+   ]
+  }
+ },
+ "breakers": {},
+ "guard_comparison": {
+  "qwen/qwen3-32b": {
+   "clean_accuracy": {
+    "n_paired": 1258,
+    "n_conversations": 305,
+    "n_guarded": 1258,
+    "n_v2": 1258,
+    "guarded": 0.8306836248012719,
+    "v2": 0.8378378378378378,
+    "diff": -0.007154213036565978,
+    "ci_low": -0.020171254594925875,
+    "ci_high": 0.005573470626479341
+   },
+   "dependent_extra_error": {
+    "n_paired": 2848,
+    "n_conversations": 305,
+    "n_guarded": 2848,
+    "n_v2": 2848,
+    "guarded": 0.0488061797752809,
+    "v2": 0.06214887640449438,
+    "diff": -0.013342696629213483,
+    "ci_low": -0.0411204803275837,
+    "ci_high": 0.012191730552149204
+   },
+   "independent_extra_error": {
+    "n_paired": 1361,
+    "n_conversations": 266,
+    "n_guarded": 1361,
+    "n_v2": 1361,
+    "guarded": 0.02351212343864805,
+    "v2": 0.04041146216017634,
+    "diff": -0.01689933872152829,
+    "ci_low": -0.04583435890133697,
+    "ci_high": 0.01268275979171381
+   },
+   "free_accuracy": {
+    "n_paired": 1258,
+    "n_conversations": 305,
+    "n_guarded": 1258,
+    "n_v2": 1258,
+    "guarded": 0.7829888712241654,
+    "v2": 0.7853736089030207,
+    "diff": -0.0023847376788553257,
+    "ci_low": -0.0175309305907361,
+    "ci_high": 0.013460549539350624
+   }
+  },
+  "deepseek/deepseek-chat-v3-0324": {
+   "clean_accuracy": {
+    "n_paired": 1258,
+    "n_conversations": 305,
+    "n_guarded": 1258,
+    "n_v2": 1258,
+    "guarded": 0.863275039745628,
+    "v2": 0.8680445151033387,
+    "diff": -0.0047694753577106515,
+    "ci_low": -0.016026284109149275,
+    "ci_high": 0.006314127861089187
+   },
+   "dependent_extra_error": {
+    "n_paired": 2848,
+    "n_conversations": 305,
+    "n_guarded": 2848,
+    "n_v2": 2848,
+    "guarded": 0.2478932584269663,
+    "v2": 0.28019662921348315,
+    "diff": -0.032303370786516857,
+    "ci_low": -0.05671784630700673,
+    "ci_high": -0.009119962067330503
+   },
+   "independent_extra_error": {
+    "n_paired": 1361,
+    "n_conversations": 266,
+    "n_guarded": 1361,
+    "n_v2": 1361,
+    "guarded": 0.1535635562086701,
+    "v2": 0.14474650991917706,
+    "diff": 0.00881704628949302,
+    "ci_low": -0.017129335303294812,
+    "ci_high": 0.03499108832165164
+   },
+   "free_accuracy": {
+    "n_paired": 1258,
+    "n_conversations": 305,
+    "n_guarded": 1258,
+    "n_v2": 1258,
+    "guarded": 0.7941176470588235,
+    "v2": 0.7965023847376789,
+    "diff": -0.0023847376788553257,
+    "ci_low": -0.021688494509868643,
+    "ci_high": 0.01483537406184881
+   }
+  }
+ }
+}

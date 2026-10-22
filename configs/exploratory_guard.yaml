@@ -1,0 +1,33 @@
+# Exploratory guarded-prompt run, added after freezing (PREREGISTRATION.md change 2, CHANGELOG.md R31).
+# Not a test of H1 to H5. Identical to configs/main.yaml except: `prompt: v2-guard` (v2 plus the guard
+# paragraph in prompts.py), its own output folder, two models only, no breakers, and `compare_to`, which makes
+# `cascade report` print guarded minus v2 (paired rows, conversation cluster bootstrap) against results/main.
+# Stages: clean, inject, free (no clean_repeat; the main run's noise floor is used).
+# Run configs/smoke_guard.yaml first; the wording is not revised after the smoke.
+split: dev
+min_turns: 3
+sample: null
+seed: 0
+workers: 8                 # as in main.yaml (DeepSeek and Qwen3 32B ran with 8 workers in the main run)
+max_tokens: 8192
+repeat_seed: 1
+prompt: v2-guard
+out: results/exploratory_guard
+cache: cache/replies.sqlite
+compare_to: results/main
+
+models:
+  - qwen/qwen3-32b
+  - deepseek/deepseek-chat-v3-0324
+
+providers:
+  qwen/qwen3-32b: DeepInfra
+  deepseek/deepseek-chat-v3-0324: GMICloud  # SiliconFlow is cheaper but ignores seed
+
+request_extra:
+  qwen/qwen3-32b: {reasoning: {max_tokens: 2048}}
+
+error_types: [scale, sign, percent, period, line_item, digits]
+types_per_turn: 2
+
+breakers: []

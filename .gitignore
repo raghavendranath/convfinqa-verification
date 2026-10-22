@@ -1,0 +1,25 @@
+data/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.venv/
+_to_delete/
+dist/
+.DS_Store
+# Reply cache (SQLite, changes on every API call): released with the paper as a separate archive.
+# Every row in results/ already keeps the model's raw reply.
+cache/
+
+# Local credentials and authoring/build intermediates
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz

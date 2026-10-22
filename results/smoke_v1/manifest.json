@@ -1,0 +1,62 @@
+{
+ "config": {
+  "split": "dev",
+  "min_turns": 3,
+  "sample": 20,
+  "seed": 0,
+  "workers": 4,
+  "max_tokens": 4096,
+  "out": "results/smoke",
+  "cache": "cache/replies.sqlite",
+  "models": [
+   "qwen/qwen3-32b"
+  ],
+  "providers": {},
+  "error_types": [
+   "scale",
+   "sign",
+   "percent",
+   "period",
+   "line_item",
+   "digits"
+  ],
+  "types_per_turn": 2,
+  "breakers": [
+   {
+    "name": "self_qwen32b",
+    "kind": "self",
+    "answerer": "qwen/qwen3-32b",
+    "checker": "qwen/qwen3-32b"
+   },
+   {
+    "name": "program_qwen32b",
+    "kind": "program",
+    "answerer": "qwen/qwen3-32b",
+    "checker": "qwen/qwen3-32b"
+   }
+  ]
+ },
+ "n_conversations": 20,
+ "ids": [
+  "Double_AAP/2011/page_28.pdf",
+  "Double_AMAT/2013/page_18.pdf",
+  "Double_AMT/2012/page_125.pdf",
+  "Double_IP/2006/page_32.pdf",
+  "Double_SYY/2019/page_9.pdf",
+  "Double_TROW/2010/page_22.pdf",
+  "Double_UNP/2008/page_77.pdf",
+  "Double_V/2008/page_17.pdf",
+  "Single_BLL/2007/page_47.pdf-3",
+  "Single_EW/2016/page_94.pdf-2",
+  "Single_IPG/2008/page_21.pdf-1",
+  "Single_LKQ/2010/page_84.pdf-4",
+  "Single_LMT/2006/page_90.pdf-2",
+  "Single_MRO/2009/page_56.pdf-1",
+  "Single_PM/2018/page_24.pdf-2",
+  "Single_RSG/2017/page_142.pdf-2",
+  "Single_SNPS/2006/page_69.pdf-2",
+  "Single_UNP/2006/page_37.pdf-4",
+  "Single_UPS/2006/page_32.pdf-1",
+  "Single_ZBH/2003/page_58.pdf-1"
+ ]
+}

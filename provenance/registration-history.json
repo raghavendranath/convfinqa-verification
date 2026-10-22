@@ -1,0 +1,74 @@
+[
+  {
+    "commit": "8c9a8248d01662a1fa534b15db27f98ba122676f",
+    "author_date": "2026-10-07T14:25:57-04:00",
+    "committer_date": "2026-10-07T14:25:57-04:00",
+    "subject": "Study code, smoke run and pre-registration draft",
+    "snapshot": "PREREGISTRATION-8c9a824.md",
+    "sha256": "41a820cdce56fbac77514b50e4989876d8ec5017602efc43f83a27bc46c5a283"
+  },
+  {
+    "commit": "ed527403983a3631979912183cfb4a6c044757fc",
+    "author_date": "2026-10-12T22:13:09-04:00",
+    "committer_date": "2026-10-12T22:13:09-04:00",
+    "subject": "Freeze pre-registration at 6dfe505",
+    "snapshot": "PREREGISTRATION-ed52740.md",
+    "sha256": "7ecced6565a65107a9dd8304337307e536df3ceab71de8ab1f50f0c5aa7e9efc"
+  },
+  {
+    "commit": "1de47f215788ad4bedc089420642c987dca44833",
+    "author_date": "2026-10-14T07:49:25-04:00",
+    "committer_date": "2026-10-14T07:49:25-04:00",
+    "subject": "Main run complete: Qwen3 14B, report for all 5 models",
+    "snapshot": "PREREGISTRATION-1de47f2.md",
+    "sha256": "a09663f017476983e263dbb6f5c464f18aaf3c33b638d6b2af115f98f294380b"
+  },
+  {
+    "commit": "91bd04ae91eec73a7d838baa593afbd3ee7effa4",
+    "author_date": "2026-10-17T16:08:45-04:00",
+    "committer_date": "2026-10-17T16:08:45-04:00",
+    "subject": "Post-hoc analyses, exploratory run code, second graph audit",
+    "snapshot": "PREREGISTRATION-91bd04a.md",
+    "sha256": "9c1d19e386684b0eb1f428add76df5eec97c1db06d89ac67e394c60e7d55316b"
+  },
+  {
+    "commit": "2ccc2c5fe41a0831025609dd04450da7434a3998",
+    "author_date": "2026-10-17T22:49:44-04:00",
+    "committer_date": "2026-10-17T22:49:44-04:00",
+    "subject": "Scoring audit, author decisions, change 4 design and locked evaluation sample (R36, R37)",
+    "snapshot": "PREREGISTRATION-2ccc2c5.md",
+    "sha256": "64636ef0f5b44326e330f107dcbec44cf7bdeafd8d4aba6d81e624d65d450d5d"
+  },
+  {
+    "commit": "89c1d29e9f39bc015d127299d163ef9483f29950",
+    "author_date": "2026-10-17T23:20:55-04:00",
+    "committer_date": "2026-10-17T23:20:55-04:00",
+    "subject": "Change 4 Part A and program_v2 build (R38)'",
+    "snapshot": "PREREGISTRATION-89c1d29.md",
+    "sha256": "9bfe91a2cee73444194e7b4fc703f0afb41ee8188a455d5631e2dcff67d46acc"
+  },
+  {
+    "commit": "d9123f734b245861b1f695184f70ea835e9d3050",
+    "author_date": "2026-10-18T00:05:32-04:00",
+    "committer_date": "2026-10-18T00:05:32-04:00",
+    "subject": "Freeze program_v2 prompt pv2-dev3 as change 4 Part B (R41)",
+    "snapshot": "PREREGISTRATION-d9123f7.md",
+    "sha256": "359367052c2c45e74b86099cfdc676b8aab62e51ada0a5c62529593a1476c4f7"
+  },
+  {
+    "commit": "ad078e88ff55e897a3a54e9e5eab977e1ee3a38a",
+    "author_date": "2026-10-18T21:33:46-04:00",
+    "committer_date": "2026-10-18T21:33:46-04:00",
+    "subject": "Change 4 final results, post-hoc dash-column re-check, body-429 retry fix (R42-R45)",
+    "snapshot": "PREREGISTRATION-ad078e8.md",
+    "sha256": "7edea7133313d6e81e19169ed8bc2060c1de82e5cc59797a70ba2c06de03369a"
+  },
+  {
+    "commit": "2c5c6581204ad9dfbc5b2cc4136bc50abb1809d5",
+    "author_date": "2026-10-20T23:41:11-04:00",
+    "committer_date": "2026-10-20T23:41:11-04:00",
+    "subject": "Revise paper and fix implementation (R50-R53)",
+    "snapshot": "PREREGISTRATION-2c5c658.md",
+    "sha256": "36bc6c10dbf60c3abcd3f7a4e6be8d9392758f888d07abbf1f721b1b6513a62c"
+  }
+]

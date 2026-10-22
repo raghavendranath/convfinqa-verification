@@ -1,0 +1,66 @@
+split: dev
+min_turns: 3
+sample: null
+seed: 0
+workers: 8
+max_tokens: 8192
+repeat_seed: 1
+out: results/parser_sensitivity/main
+cache: cache/replies.sqlite
+models:
+- qwen/qwen3-14b
+- qwen/qwen3-32b
+- meta-llama/llama-4-maverick
+- mistralai/mistral-large-2512
+- deepseek/deepseek-chat-v3-0324
+providers:
+  qwen/qwen3-14b: DeepInfra
+  qwen/qwen3-32b: DeepInfra
+  meta-llama/llama-4-maverick: Novita
+  mistralai/mistral-large-2512: Mistral
+  deepseek/deepseek-chat-v3-0324: GMICloud
+request_extra:
+  qwen/qwen3-14b:
+    reasoning:
+      max_tokens: 2048
+  qwen/qwen3-32b:
+    reasoning:
+      max_tokens: 2048
+error_types:
+- scale
+- sign
+- percent
+- period
+- line_item
+- digits
+types_per_turn: 2
+breakers:
+- name: self_qwen32b
+  kind: self
+  answerer: qwen/qwen3-32b
+  checker: qwen/qwen3-32b
+- name: cross_qwen32b_by_llama
+  kind: cross
+  answerer: qwen/qwen3-32b
+  checker: meta-llama/llama-4-maverick
+- name: program_qwen32b
+  kind: program
+  answerer: qwen/qwen3-32b
+  checker: qwen/qwen3-32b
+exploratory_breakers:
+- name: self_deepseek
+  kind: self
+  answerer: deepseek/deepseek-chat-v3-0324
+  checker: deepseek/deepseek-chat-v3-0324
+- name: cross_deepseek_by_llama
+  kind: cross
+  answerer: deepseek/deepseek-chat-v3-0324
+  checker: meta-llama/llama-4-maverick
+- name: program_deepseek
+  kind: program
+  answerer: deepseek/deepseek-chat-v3-0324
+  checker: deepseek/deepseek-chat-v3-0324
+posthoc:
+  size_pair:
+  - qwen/qwen3-14b
+  - qwen/qwen3-32b

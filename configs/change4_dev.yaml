@@ -1,0 +1,32 @@
+# PREREGISTRATION change 4 (CHANGELOG R38): development of program_v2 on the 20 dev smoke conversations only
+# (same selection as configs/smoke.yaml). One output folder per prompt version (PROGRAM_V2_VERSION in
+# src/cascade/prompts.py); at most 5 versions, every one kept. The free answers and the frozen program checks for
+# these conversations are already in the reply cache from the main run, so only program_v2 calls cost money.
+split: dev
+min_turns: 3
+sample: 20
+seed: 0
+workers: 8
+max_tokens: 8192
+out: results/change4_dev/pv2-dev3
+cache: cache/replies.sqlite
+models:
+  - qwen/qwen3-32b
+  - deepseek/deepseek-chat-v3-0324
+providers:
+  qwen/qwen3-32b: DeepInfra
+  deepseek/deepseek-chat-v3-0324: GMICloud
+request_extra:
+  qwen/qwen3-32b: {reasoning: {max_tokens: 2048}}
+error_types: [scale, sign, percent, period, line_item, digits]
+types_per_turn: 2
+breakers:
+  - {name: program_qwen32b,     kind: program,    answerer: qwen/qwen3-32b, checker: qwen/qwen3-32b}
+  - {name: program_v2_qwen32b,  kind: program_v2, answerer: qwen/qwen3-32b, checker: qwen/qwen3-32b}
+  - {name: program_deepseek,    kind: program,    answerer: deepseek/deepseek-chat-v3-0324, checker: deepseek/deepseek-chat-v3-0324}
+  - {name: program_v2_deepseek, kind: program_v2, answerer: deepseek/deepseek-chat-v3-0324, checker: deepseek/deepseek-chat-v3-0324}
+change4:
+  margin: 0.02
+  pairs:
+    - {answerer: qwen/qwen3-32b, frozen: program_qwen32b, revised: program_v2_qwen32b}
+    - {answerer: deepseek/deepseek-chat-v3-0324, frozen: program_deepseek, revised: program_v2_deepseek}

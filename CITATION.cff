@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software or its saved research artifacts, please cite this repository."
+type: software
+title: "Error Propagation and Verification Limits in Conversational Financial Question Answering"
+authors:
+  - family-names: Kandula
+    given-names: Raghavendranath
+    affiliation: Independent Researcher
+license: Apache-2.0

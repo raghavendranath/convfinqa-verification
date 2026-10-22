@@ -1,0 +1,33 @@
+# Smoke check for the exploratory guarded prompt (PREREGISTRATION.md change 2, CHANGELOG.md R31): stage clean
+# only, 20 conversations (same sample as configs/smoke.yaml), to check that answers under `prompt: v2-guard` still
+# parse. The wording is not revised after the smoke; on a parse failure the guarded run is dropped and reported.
+# Otherwise identical to configs/exploratory_guard.yaml (sample 20, workers 4, own output folder).
+# results/smoke holds only Qwen3 32B, so `compare_to` points at results/main: the 20 conversations are a subset
+# of main, and the report pairs only rows present in both runs.
+split: dev
+min_turns: 3
+sample: 20
+seed: 0
+workers: 4
+max_tokens: 8192
+repeat_seed: 1
+prompt: v2-guard
+out: results/smoke_guard
+cache: cache/replies.sqlite
+compare_to: results/main
+
+models:
+  - qwen/qwen3-32b
+  - deepseek/deepseek-chat-v3-0324
+
+providers:
+  qwen/qwen3-32b: DeepInfra
+  deepseek/deepseek-chat-v3-0324: GMICloud  # SiliconFlow is cheaper but ignores seed
+
+request_extra:
+  qwen/qwen3-32b: {reasoning: {max_tokens: 2048}}
+
+error_types: [scale, sign, percent, period, line_item, digits]
+types_per_turn: 2
+
+breakers: []

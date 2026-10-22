@@ -1,0 +1,243 @@
+{
+ "models": {
+  "qwen/qwen3-14b": {
+   "clean_accuracy": 0.8433734939759037,
+   "cascade": [
+    {
+     "type": "all",
+     "turns": "depends",
+     "extra_error": 0.05555555555555555,
+     "ci_low": 0.0,
+     "ci_high": 0.10185409924487593,
+     "n": 180
+    },
+    {
+     "type": "all",
+     "turns": "independent",
+     "extra_error": 0.02040816326530612,
+     "ci_low": -0.01818181818181818,
+     "ci_high": 0.0625,
+     "n": 98
+    },
+    {
+     "type": "digits",
+     "turns": "depends",
+     "extra_error": 0.13333333333333333,
+     "ci_low": 0.030303030303030304,
+     "ci_high": 0.29035618279569875,
+     "n": 30
+    },
+    {
+     "type": "digits",
+     "turns": "independent",
+     "extra_error": 0.0,
+     "ci_low": 0.0,
+     "ci_high": 0.0,
+     "n": 17
+    },
+    {
+     "type": "line_item",
+     "turns": "depends",
+     "extra_error": -0.08333333333333333,
+     "ci_low": -0.2727272727272727,
+     "ci_high": 0.0,
+     "n": 12
+    },
+    {
+     "type": "line_item",
+     "turns": "independent",
+     "extra_error": 0.0,
+     "ci_low": 0.0,
+     "ci_high": 0.0,
+     "n": 9
+    },
+    {
+     "type": "percent",
+     "turns": "depends",
+     "extra_error": 0.09375,
+     "ci_low": 0.0,
+     "ci_high": 0.17073170731707318,
+     "n": 32
+    },
+    {
+     "type": "percent",
+     "turns": "independent",
+     "extra_error": 0.05,
+     "ci_low": 0.0,
+     "ci_high": 0.15,
+     "n": 20
+    },
+    {
+     "type": "period",
+     "turns": "depends",
+     "extra_error": 0.1,
+     "ci_low": -0.2,
+     "ci_high": 0.5714285714285714,
+     "n": 10
+    },
+    {
+     "type": "period",
+     "turns": "independent",
+     "extra_error": -0.25,
+     "ci_low": -1.0,
+     "ci_high": 0.0,
+     "n": 4
+    },
+    {
+     "type": "scale",
+     "turns": "depends",
+     "extra_error": 0.075,
+     "ci_low": 0.0,
+     "ci_high": 0.1388888888888889,
+     "n": 40
+    },
+    {
+     "type": "scale",
+     "turns": "independent",
+     "extra_error": 0.08333333333333333,
+     "ci_low": 0.0,
+     "ci_high": 0.23809523809523808,
+     "n": 24
+    },
+    {
+     "type": "sign",
+     "turns": "depends",
+     "extra_error": 0.0,
+     "ci_low": -0.05555555555555555,
+     "ci_high": 0.05084745762711865,
+     "n": 56
+    },
+    {
+     "type": "sign",
+     "turns": "independent",
+     "extra_error": 0.0,
+     "ci_low": 0.0,
+     "ci_high": 0.0,
+     "n": 24
+    }
+   ],
+   "transmission_fit": {
+    "a_transmission": 0.035,
+    "s_spillover": 0.0,
+    "heldout_logloss": 0.2284325535022011,
+    "heldout_brier": 0.05951767319322872,
+    "heldout_n": 116,
+    "graph_blind_c": 0.045,
+    "graph_blind_heldout_brier": 0.06077599111323968,
+    "brier_diff": -0.0012583179200109538,
+    "brier_diff_ci_low": -0.003275523204841307,
+    "brier_diff_ci_high": 0.0008824024238388413,
+    "calibration_by_paths": [
+     {
+      "paths": 0,
+      "n": 46,
+      "predicted": 0.09903381642512077,
+      "observed": 0.08695652173913043
+     },
+     {
+      "paths": 1,
+      "n": 54,
+      "predicted": 0.17796296296296307,
+      "observed": 0.18518518518518517
+     },
+     {
+      "paths": 2,
+      "n": 10,
+      "predicted": 0.21363222222222222,
+      "observed": 0.2
+     },
+     {
+      "paths": 3,
+      "n": 6,
+      "predicted": 0.30106390277777795,
+      "observed": 0.3333333333333333
+     }
+    ]
+   },
+   "copied_wrong_rate_dependent": 0.016666666666666666,
+   "reply_health": {
+    "clean": {
+     "n": 83,
+     "unparsed": 2,
+     "truncated": 2
+    },
+    "inject": {
+     "n": 278,
+     "unparsed": 1,
+     "truncated": 1
+    }
+   },
+   "noise_floor": null,
+   "mechanisms": [
+    {
+     "turns": "depends",
+     "newly_wrong": 13,
+     "copied": 1,
+     "convention": 4,
+     "loop": 0,
+     "no_answer": 0,
+     "other": 8
+    },
+    {
+     "turns": "independent",
+     "newly_wrong": 3,
+     "copied": 0,
+     "convention": 3,
+     "loop": 0,
+     "no_answer": 0,
+     "other": 0
+    },
+    {
+     "turns": "all",
+     "newly_wrong": 16,
+     "copied": 1,
+     "convention": 7,
+     "loop": 0,
+     "no_answer": 0,
+     "other": 8
+    }
+   ]
+  }
+ },
+ "breakers": {},
+ "graph_audit": {
+  "complete": true,
+  "conversations": 50,
+  "turns": 219,
+  "edges_found": 264,
+  "edges_true": 177,
+  "precision": 0.6704545454545454,
+  "precision_ci": [
+   0.6232805593242593,
+   0.7204737303579412
+  ],
+  "recall": 1.0,
+  "recall_ci": [
+   1.0,
+   1.0
+  ],
+  "reference_only_edges": 80,
+  "reference_only_edges_found_by_graph": 30
+ },
+ "graph_audit_llm": {
+  "labeller": "GPT 6.1 Sol (high reasoning)",
+  "complete": true,
+  "conversations": 50,
+  "turns": 219,
+  "edges_found": 264,
+  "edges_true": 177,
+  "precision": 0.6704545454545454,
+  "precision_ci": [
+   0.6232805593242593,
+   0.7204737303579412
+  ],
+  "recall": 1.0,
+  "recall_ci": [
+   1.0,
+   1.0
+  ],
+  "reference_only_edges": 80,
+  "reference_only_edges_found_by_graph": 30,
+  "turns_differing_from_audit": []
+ }
+}

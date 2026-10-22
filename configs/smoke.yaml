@@ -1,0 +1,25 @@
+# Smoke test: 20 conversations, 1 model, to check output parsing and cost before the main run.
+split: dev
+min_turns: 3
+sample: 20
+seed: 0
+workers: 4
+max_tokens: 8192           # raised from 4,096 on 7 Oct 2026; see CHANGELOG.md R13
+repeat_seed: 1             # `clean_repeat` asks the clean questions again: run-to-run noise floor (CHANGELOG.md R15)
+out: results/smoke
+cache: cache/replies.sqlite
+models: [qwen/qwen3-32b]
+# Pin one host per model (OpenRouter provider name) so replies do not depend on routing.
+# The v1 smoke replies came from DeepInfra, Tenstorrent and SiliconFlow.
+# Chosen 7 Oct 2026 from scripts/endpoints.py: cheapest host that supports `seed` (and `reasoning` for Qwen3).
+providers:
+  qwen/qwen3-32b: DeepInfra
+# Extra request fields per model, e.g. OpenRouter reasoning settings. Part of the cache key.
+# Qwen3 thinking cap requested; DeepInfra does not enforce it (CHANGELOG.md R10, R13), so max_tokens is the real limit.
+request_extra:
+  qwen/qwen3-32b: {reasoning: {max_tokens: 2048}}
+error_types: [scale, sign, percent, period, line_item, digits]
+types_per_turn: 2
+breakers:
+  - {name: self_qwen32b,    kind: self,    answerer: qwen/qwen3-32b, checker: qwen/qwen3-32b}
+  - {name: program_qwen32b, kind: program, answerer: qwen/qwen3-32b, checker: qwen/qwen3-32b}

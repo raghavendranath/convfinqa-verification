@@ -1,0 +1,455 @@
+{
+ "models": {},
+ "breakers": {
+  "program_qwen32b": [
+   {
+    "group": "free:right",
+    "metric": "false_alarm_rate",
+    "value": 0.041666666666666664,
+    "ci_low": 0.0,
+    "ci_high": 0.08572660098522161,
+    "n": 72,
+    "unusable_rate": 0.041666666666666664
+   },
+   {
+    "group": "free:wrong",
+    "metric": "catch_rate",
+    "value": 0.1111111111111111,
+    "ci_low": 0.0,
+    "ci_high": 0.3333333333333333,
+    "n": 9,
+    "unusable_rate": 0.2222222222222222
+   },
+   {
+    "group": "gold:right",
+    "metric": "false_alarm_rate",
+    "value": 0.07936507936507936,
+    "ci_low": 0.014285714285714285,
+    "ci_high": 0.1774481566820275,
+    "n": 63,
+    "unusable_rate": 0.06349206349206349
+   },
+   {
+    "group": "inject:wrong",
+    "metric": "catch_rate",
+    "value": 0.8015873015873016,
+    "ci_low": 0.7096774193548387,
+    "ci_high": 0.875,
+    "n": 126,
+    "unusable_rate": 0.06349206349206349
+   }
+  ],
+  "program_v2_qwen32b": [
+   {
+    "group": "free:right",
+    "metric": "false_alarm_rate",
+    "value": 0.06944444444444445,
+    "ci_low": 0.01369400222139948,
+    "ci_high": 0.13514658726523127,
+    "n": 72,
+    "unusable_rate": 0.18055555555555555
+   },
+   {
+    "group": "free:wrong",
+    "metric": "catch_rate",
+    "value": 0.1111111111111111,
+    "ci_low": 0.0,
+    "ci_high": 0.3333333333333333,
+    "n": 9,
+    "unusable_rate": 0.2222222222222222
+   },
+   {
+    "group": "gold:right",
+    "metric": "false_alarm_rate",
+    "value": 0.09523809523809523,
+    "ci_low": 0.030303030303030304,
+    "ci_high": 0.1818560606060604,
+    "n": 63,
+    "unusable_rate": 0.20634920634920634
+   },
+   {
+    "group": "inject:wrong",
+    "metric": "catch_rate",
+    "value": 0.8253968253968254,
+    "ci_low": 0.6875,
+    "ci_high": 0.9274222767648433,
+    "n": 126,
+    "unusable_rate": 0.16666666666666666
+   }
+  ],
+  "program_deepseek": [
+   {
+    "group": "free:right",
+    "metric": "false_alarm_rate",
+    "value": 0.11594202898550725,
+    "ci_low": 0.05970149253731343,
+    "ci_high": 0.17191145833333313,
+    "n": 69,
+    "unusable_rate": 0.17391304347826086
+   },
+   {
+    "group": "free:wrong",
+    "metric": "catch_rate",
+    "value": 0.14285714285714285,
+    "ci_low": 0.0,
+    "ci_high": 0.3333333333333333,
+    "n": 14,
+    "unusable_rate": 0.14285714285714285
+   },
+   {
+    "group": "gold:right",
+    "metric": "false_alarm_rate",
+    "value": 0.1111111111111111,
+    "ci_low": 0.03278688524590164,
+    "ci_high": 0.21052631578947367,
+    "n": 63,
+    "unusable_rate": 0.14285714285714285
+   },
+   {
+    "group": "inject:wrong",
+    "metric": "catch_rate",
+    "value": 0.7301587301587301,
+    "ci_low": 0.6229508196721312,
+    "ci_high": 0.828125,
+    "n": 126,
+    "unusable_rate": 0.14285714285714285
+   }
+  ],
+  "program_v2_deepseek": [
+   {
+    "group": "free:right",
+    "metric": "false_alarm_rate",
+    "value": 0.08695652173913043,
+    "ci_low": 0.03123798076923077,
+    "ci_high": 0.14285714285714285,
+    "n": 69,
+    "unusable_rate": 0.08695652173913043
+   },
+   {
+    "group": "free:wrong",
+    "metric": "catch_rate",
+    "value": 0.35714285714285715,
+    "ci_low": 0.1,
+    "ci_high": 0.5,
+    "n": 14,
+    "unusable_rate": 0.2857142857142857
+   },
+   {
+    "group": "gold:right",
+    "metric": "false_alarm_rate",
+    "value": 0.15873015873015872,
+    "ci_low": 0.06451612903225806,
+    "ci_high": 0.274235261401557,
+    "n": 63,
+    "unusable_rate": 0.07936507936507936
+   },
+   {
+    "group": "inject:wrong",
+    "metric": "catch_rate",
+    "value": 0.8968253968253969,
+    "ci_low": 0.8032786885245902,
+    "ci_high": 0.9687620192307692,
+    "n": 126,
+    "unusable_rate": 0.07142857142857142
+   }
+  ]
+ },
+ "change4": {
+  "pairs": {
+   "program_v2_qwen32b": {
+    "answerer": "qwen/qwen3-32b",
+    "frozen": "program_qwen32b",
+    "comparisons": {
+     "strict": {
+      "recall": {
+       "diff": -0.2222222222222222,
+       "ci_low": -0.4444444444444444,
+       "ci_high": 0.0,
+       "n": 9,
+       "conversations": 5,
+       "revised": 0.1111111111111111,
+       "comparator": 0.3333333333333333,
+       "class": "inconclusive"
+      },
+      "false_alarms": {
+       "diff": -0.125,
+       "ci_low": -0.24325190575190578,
+       "ci_high": -0.014084507042253521,
+       "n": 72,
+       "conversations": 20,
+       "revised": 0.06944444444444445,
+       "comparator": 0.19444444444444445,
+       "class": "non-inferior"
+      }
+     },
+     "lenient": {
+      "recall": {
+       "diff": 0.0,
+       "ci_low": -0.3333333333333333,
+       "ci_high": 0.3,
+       "n": 9,
+       "conversations": 5,
+       "revised": 0.1111111111111111,
+       "comparator": 0.1111111111111111,
+       "class": "inconclusive"
+      },
+      "false_alarms": {
+       "diff": 0.027777777777777776,
+       "ci_low": -0.04226861167002012,
+       "ci_high": 0.08695652173913043,
+       "n": 72,
+       "conversations": 20,
+       "revised": 0.06944444444444445,
+       "comparator": 0.041666666666666664,
+       "class": "inconclusive"
+      }
+     }
+    },
+    "n_paired": 270,
+    "n_revised": 270,
+    "n_frozen": 270
+   },
+   "program_v2_deepseek": {
+    "answerer": "deepseek/deepseek-chat-v3-0324",
+    "frozen": "program_deepseek",
+    "comparisons": {
+     "strict": {
+      "recall": {
+       "diff": -0.14285714285714285,
+       "ci_low": -0.38461538461538464,
+       "ci_high": 0.0,
+       "n": 14,
+       "conversations": 9,
+       "revised": 0.35714285714285715,
+       "comparator": 0.5,
+       "class": "inconclusive"
+      },
+      "false_alarms": {
+       "diff": -0.10144927536231885,
+       "ci_low": -0.1795138888888889,
+       "ci_high": -0.01723407364114557,
+       "n": 69,
+       "conversations": 20,
+       "revised": 0.08695652173913043,
+       "comparator": 0.18840579710144928,
+       "class": "non-inferior"
+      }
+     },
+     "lenient": {
+      "recall": {
+       "diff": 0.21428571428571427,
+       "ci_low": -0.09090909090909091,
+       "ci_high": 0.4,
+       "n": 14,
+       "conversations": 9,
+       "revised": 0.35714285714285715,
+       "comparator": 0.14285714285714285,
+       "class": "inconclusive"
+      },
+      "false_alarms": {
+       "diff": -0.028985507246376812,
+       "ci_low": -0.0945945945945946,
+       "ci_high": 0.04002739726027382,
+       "n": 69,
+       "conversations": 20,
+       "revised": 0.08695652173913043,
+       "comparator": 0.11594202898550725,
+       "class": "inconclusive"
+      }
+     }
+    },
+    "n_paired": 272,
+    "n_revised": 272,
+    "n_frozen": 272
+   }
+  },
+  "calls": {
+   "qwen/qwen3-32b": "not shown",
+   "deepseek/deepseek-chat-v3-0324": "not shown"
+  },
+  "across": "not shown for every answerer",
+  "margin": 0.02
+ },
+ "graph_audit": {
+  "complete": true,
+  "conversations": 50,
+  "turns": 219,
+  "edges_found": 264,
+  "edges_true": 177,
+  "precision": 0.6704545454545454,
+  "precision_ci": [
+   0.6232805593242593,
+   0.7204737303579412
+  ],
+  "recall": 1.0,
+  "recall_ci": [
+   1.0,
+   1.0
+  ],
+  "reference_only_edges": 80,
+  "reference_only_edges_found_by_graph": 30
+ },
+ "graph_audit_second": {
+  "all 50": {
+   "primary": {
+    "complete": true,
+    "conversations": 50,
+    "turns": 219,
+    "edges_found": 264,
+    "edges_true": 177,
+    "precision": 0.6704545454545454,
+    "precision_ci": [
+     0.6232805593242593,
+     0.7204737303579412
+    ],
+    "recall": 1.0,
+    "recall_ci": [
+     1.0,
+     1.0
+    ],
+    "reference_only_edges": 80,
+    "reference_only_edges_found_by_graph": 30
+   },
+   "second": {
+    "complete": true,
+    "conversations": 50,
+    "turns": 219,
+    "edges_found": 264,
+    "edges_true": 163,
+    "precision": 0.6136363636363636,
+    "precision_ci": [
+     0.5729166666666666,
+     0.6609477975110888
+    ],
+    "recall": 0.9938650306748467,
+    "recall_ci": [
+     0.9805194805194806,
+     1.0
+    ],
+    "reference_only_edges": 69,
+    "reference_only_edges_found_by_graph": 28
+   },
+   "agreement": {
+    "conversations": 50,
+    "turns": 169,
+    "value": {
+     "same_turns": 134,
+     "same_share": 0.7928994082840237,
+     "edges": 394,
+     "both": 147,
+     "a_only": 30,
+     "b_only": 16,
+     "kappa": 0.7623331322615332,
+     "kappa_ci": [
+      0.6846921941652224,
+      0.839862163293981
+     ]
+    },
+    "reference": {
+     "same_turns": 132,
+     "same_share": 0.7810650887573964,
+     "edges": 394,
+     "both": 54,
+     "a_only": 26,
+     "b_only": 15,
+     "kappa": 0.6611001552469264,
+     "kappa_ci": [
+      0.5708158567228354,
+      0.7494336050435868
+     ]
+    }
+   }
+  },
+  "47, worked examples left out": {
+   "primary": {
+    "complete": true,
+    "conversations": 47,
+    "turns": 205,
+    "edges_found": 243,
+    "edges_true": 165,
+    "precision": 0.6790123456790124,
+    "precision_ci": [
+     0.6332046332046332,
+     0.728579365079365
+    ],
+    "recall": 1.0,
+    "recall_ci": [
+     1.0,
+     1.0
+    ],
+    "reference_only_edges": 76,
+    "reference_only_edges_found_by_graph": 29
+   },
+   "second": {
+    "complete": true,
+    "conversations": 47,
+    "turns": 205,
+    "edges_found": 243,
+    "edges_true": 149,
+    "precision": 0.6090534979423868,
+    "precision_ci": [
+     0.5656925090319251,
+     0.6601987543506137
+    ],
+    "recall": 0.9932885906040269,
+    "recall_ci": [
+     0.9788732394366197,
+     1.0
+    ],
+    "reference_only_edges": 65,
+    "reference_only_edges_found_by_graph": 27
+   },
+   "agreement": {
+    "conversations": 47,
+    "turns": 158,
+    "value": {
+     "same_turns": 127,
+     "same_share": 0.8037974683544303,
+     "edges": 366,
+     "both": 138,
+     "a_only": 27,
+     "b_only": 11,
+     "kappa": 0.7884843507619308,
+     "kappa_ci": [
+      0.7205943787029432,
+      0.85569132302087
+     ]
+    },
+    "reference": {
+     "same_turns": 121,
+     "same_share": 0.7658227848101266,
+     "edges": 366,
+     "both": 50,
+     "a_only": 26,
+     "b_only": 15,
+     "kappa": 0.6403681158030963,
+     "kappa_ci": [
+      0.5453629345638806,
+      0.7265737282708096
+     ]
+    }
+   }
+  }
+ },
+ "graph_audit_llm": {
+  "labeller": "GPT 6.1 Sol (high reasoning)",
+  "complete": true,
+  "conversations": 50,
+  "turns": 219,
+  "edges_found": 264,
+  "edges_true": 177,
+  "precision": 0.6704545454545454,
+  "precision_ci": [
+   0.6232805593242593,
+   0.7204737303579412
+  ],
+  "recall": 1.0,
+  "recall_ci": [
+   1.0,
+   1.0
+  ],
+  "reference_only_edges": 80,
+  "reference_only_edges_found_by_graph": 30,
+  "turns_differing_from_audit": []
+ }
+}

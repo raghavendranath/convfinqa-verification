@@ -1,0 +1,7 @@
+Original research code: Raghavendranath Kandula, 2026. Apache License 2.0.
+
+This study uses ConvFinQA: Exploring the Chain of Numerical Reasoning in Conversational Finance Question Answering, Zhiyu Chen, Shiyang Li, Charese Smiley, Zhiqiang Ma, Sameena Shah and William Yang Wang, EMNLP 2022.
+https://github.com/czyssrs/ConvFinQA
+https://aclanthology.org/2022.emnlp-main.421/
+
+The upstream MIT license is reproduced in third_party/ConvFinQA-LICENSE.txt. Raw benchmark files are not redistributed. The original code license does not supersede upstream attribution, third-party rights or applicable provider terms.

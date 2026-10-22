@@ -1,0 +1,30 @@
+split: dev
+min_turns: 3
+sample: null
+seed: 0
+workers: 8
+max_tokens: 8192
+repeat_seed: 1
+prompt: v2-guard
+out: results/parser_sensitivity/exploratory_guard
+cache: cache/replies.sqlite
+compare_to: results/parser_sensitivity/main
+models:
+- qwen/qwen3-32b
+- deepseek/deepseek-chat-v3-0324
+providers:
+  qwen/qwen3-32b: DeepInfra
+  deepseek/deepseek-chat-v3-0324: GMICloud
+request_extra:
+  qwen/qwen3-32b:
+    reasoning:
+      max_tokens: 2048
+error_types:
+- scale
+- sign
+- percent
+- period
+- line_item
+- digits
+types_per_turn: 2
+breakers: []

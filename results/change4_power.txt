@@ -1,0 +1,28 @@
+
+program_qwen32b: dev 305 conversations; natural wrong 256 in 118 conversations, baseline strict recall 0.371; natural right 988, baseline strict false alarms 0.192
+  base discordance, 305 conversations, recall improvement shown: +0.00: 0.02, +0.05: 0.57, +0.10: 0.96, +0.15: 1.00
+  base discordance, 305 conversations, false alarms non-inferior: +0.02: 0.04, +0.00: 0.86, -0.05: 1.00, -0.10: 1.00
+  base discordance, 440 conversations, recall improvement shown: +0.00: 0.02, +0.05: 0.77, +0.10: 1.00, +0.15: 1.00
+  base discordance, 440 conversations, false alarms non-inferior: +0.02: 0.03, +0.00: 0.94, -0.05: 1.00, -0.10: 1.00
+  base discordance, 600 conversations, recall improvement shown: +0.00: 0.04, +0.05: 0.90, +0.10: 1.00, +0.15: 1.00
+  base discordance, 600 conversations, false alarms non-inferior: +0.02: 0.03, +0.00: 0.97, -0.05: 1.00, -0.10: 1.00
+  base discordance, 900 conversations, recall improvement shown: +0.00: 0.03, +0.05: 0.96, +0.10: 1.00, +0.15: 1.00
+  base discordance, 900 conversations, false alarms non-inferior: +0.02: 0.02, +0.00: 1.00, -0.05: 1.00, -0.10: 1.00
+  high discordance, 440 conversations, recall improvement shown: +0.00: 0.02, +0.05: 0.50, +0.10: 0.94, +0.15: 0.99
+  high discordance, 440 conversations, false alarms non-inferior: +0.02: 0.03, +0.00: 0.60, -0.05: 1.00, -0.10: 1.00
+  high discordance, 600 conversations, recall improvement shown: +0.00: 0.03, +0.05: 0.55, +0.10: 0.99, +0.15: 1.00
+  high discordance, 600 conversations, false alarms non-inferior: +0.02: 0.04, +0.00: 0.67, -0.05: 1.00, -0.10: 1.00
+
+program_deepseek: dev 305 conversations; natural wrong 255 in 117 conversations, baseline strict recall 0.475; natural right 1002, baseline strict false alarms 0.161
+  base discordance, 305 conversations, recall improvement shown: +0.00: 0.02, +0.05: 0.49, +0.10: 0.93, +0.15: 1.00
+  base discordance, 305 conversations, false alarms non-inferior: +0.02: 0.05, +0.00: 0.80, -0.05: 1.00, -0.10: 1.00
+  base discordance, 440 conversations, recall improvement shown: +0.00: 0.02, +0.05: 0.67, +0.10: 1.00, +0.15: 1.00
+  base discordance, 440 conversations, false alarms non-inferior: +0.02: 0.05, +0.00: 0.91, -0.05: 1.00, -0.10: 1.00
+  base discordance, 600 conversations, recall improvement shown: +0.00: 0.04, +0.05: 0.80, +0.10: 1.00, +0.15: 1.00
+  base discordance, 600 conversations, false alarms non-inferior: +0.02: 0.02, +0.00: 0.98, -0.05: 1.00, -0.10: 1.00
+  base discordance, 900 conversations, recall improvement shown: +0.00: 0.02, +0.05: 0.95, +0.10: 1.00, +0.15: 1.00
+  base discordance, 900 conversations, false alarms non-inferior: +0.02: 0.02, +0.00: 0.99, -0.05: 1.00, -0.10: 1.00
+  high discordance, 440 conversations, recall improvement shown: +0.00: 0.02, +0.05: 0.40, +0.10: 0.92, +0.15: 1.00
+  high discordance, 440 conversations, false alarms non-inferior: +0.02: 0.01, +0.00: 0.56, -0.05: 1.00, -0.10: nan
+  high discordance, 600 conversations, recall improvement shown: +0.00: 0.02, +0.05: 0.53, +0.10: 0.96, +0.15: 1.00
+  high discordance, 600 conversations, false alarms non-inferior: +0.02: 0.02, +0.00: 0.66, -0.05: 1.00, -0.10: nan
